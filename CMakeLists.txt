@@ -3,4 +3,8 @@ project(Applied_Project)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Applied_Project main.cpp)
+add_executable(Applied_Project main.cpp
+        graph.cpp
+        graphHeader.h
+        Trie.h
+        Trie.cpp)
