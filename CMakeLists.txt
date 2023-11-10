@@ -7,4 +7,6 @@ add_executable(Applied_Project main.cpp
         graph.cpp
         graphHeader.h
         Trie.h
-        Trie.cpp)
+        Trie.cpp
+        LinkedList.h
+        LinkedList.cpp)

@@ -44,6 +44,8 @@ public:
 
     Graph(int size);
 
+    void createGraph(string name[], Trie t[], int weight[]);
+
     //need a funciton to initalize all nodes
     //give the node its name
     //give the node its respective trie

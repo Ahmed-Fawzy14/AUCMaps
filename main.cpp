@@ -1,6 +1,12 @@
 #include <iostream>
+//#include "LinkedList.cpp"
+#include "LinkedList.h"
+
 
 int main() {
-    std::cout << "Hello, Egypt!" << std::endl;
+    LinkedList l(25);
+    l.Append(30);
+    l.Append(12);
+
     return 0;
 }
