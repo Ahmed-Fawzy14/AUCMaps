@@ -9,7 +9,7 @@
 Graph::Graph(int size) {
 
     //Initialize Adj List
-    adjLists = new list<Node> [size];
+   // adjLists = new list<Node> [size];
 
 }
 

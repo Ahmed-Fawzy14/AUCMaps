@@ -1,10 +1,10 @@
 #include <iostream>
-//#include "LinkedList.cpp"
+#include "LinkedList.cpp"
 #include "LinkedList.h"
 
 
 int main() {
-    LinkedList l(25);
+    LinkedList<int> l(25);
     l.Append(30);
     l.Append(12);
 

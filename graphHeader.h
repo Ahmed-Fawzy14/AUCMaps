@@ -9,6 +9,7 @@
 #include <iostream>
 #include <list>
 #include "Trie.h"
+#include "LinkedList.h"
 using namespace std;
 
 class Graph{
@@ -33,7 +34,7 @@ private:
 
     //Adj List
     int size;
-    list<Node> *adjLists;
+  //  LinkedList<Node> *adjLists;
 
 
 

@@ -3,8 +3,8 @@
 //
 
 #include "LinkedList.h"
-
-LinkedList::LinkedList(int data) {
+template <typename T>
+LinkedList<T>::LinkedList(T data) : root(nullptr), last(nullptr) {
     Node* p;
     p = new Node;
     p->data = data;
@@ -14,7 +14,8 @@ LinkedList::LinkedList(int data) {
 
 }
 
-int LinkedList::count(Node *p)
+template <typename T>
+int LinkedList<T>::count(Node *p)
 {
     if(p==0) //null
     return 0;
@@ -22,8 +23,8 @@ int LinkedList::count(Node *p)
     return count(p->next) +1; //+1 can be before;
 
 }
-
-typename LinkedList::Node* LinkedList::search(typename LinkedList::Node* p,int key)
+template <typename T>
+typename LinkedList<T>::Node* LinkedList<T>::search(typename LinkedList<T>::Node* p,T key)
 {
     while(p != nullptr)
     {
@@ -35,7 +36,8 @@ typename LinkedList::Node* LinkedList::search(typename LinkedList::Node* p,int k
     return nullptr;
 }
 
-void LinkedList::Append(int x)
+template <typename T>
+void LinkedList<T>::Append(T x)
 {
     Node* t = new Node;
     t->data = x;

@@ -6,7 +6,7 @@
 #define APPLIED_PROJECT_LINKEDLIST_H
 #pragma once
 
-
+template <typename T>
 class LinkedList {
 
 
@@ -14,20 +14,20 @@ public:
 
     struct Node
     {
-        int data;
+        T data;
         Node* next;
 
     };
 
     LinkedList();
 
-    LinkedList(int data);
+    LinkedList(T data);
 
     int count (Node *p);
 
-    Node* search(Node* p,int key);
+    Node* search(Node* p,T key);
 
-    void Append(int x);
+    void Append(T x);
 
 private:
 
