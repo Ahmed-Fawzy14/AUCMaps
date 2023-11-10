@@ -16,12 +16,13 @@ Graph::Graph(int size) {
 void Graph::createGraph(string name[], Trie t[], int weight[]) {
 
 
-
+    //for now we are taking a array of all node items and adding them to the list
+    //I need to test this
     for(int i = 0; i<size; i++)
     {
         Node *p = new Node(name[i], t[i], weight[i]);
-        list<Node> l;
-        //LL<node>;
+        LinkedList<Node> l(*p);
+        adjLists[i] = l;
 
 
     }

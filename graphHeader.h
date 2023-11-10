@@ -34,7 +34,7 @@ private:
 
     //Adj List
     int size;
-  //  LinkedList<Node> *adjLists;
+    LinkedList<Node> *adjLists;
 
 
 
