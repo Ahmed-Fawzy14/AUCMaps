@@ -22,7 +22,9 @@ private:
         Trie t;
         int weight;
 
-        Node();
+        Node(){
+
+        };
 
         Node(string name, Trie t, int weight){
             this->name = name;
@@ -32,9 +34,23 @@ private:
         }
     };
 
+    struct NodeData{
+        Trie t;
+        int weight;
+
+        NodeData(){
+
+        };
+
+        NodeData(Trie t, int weight){
+            this->t = t;
+            this->weight = weight;
+        }
+    };
+
     //Adj List
-    int size;
-    LinkedList<Node> *adjLists;
+    int size; //number of buildings
+    LinkedList<Node> *adjList;
 
 
 
@@ -54,6 +70,8 @@ public:
     //(JAMEEL, t0, 0) -> (FF, t1, 1) -> (SF, t2, 2) -> (ROOF, t3, 3)
     //Name and weight can be gotten from a file
     //Trie needs to be sent from main function
+
+
 
 
 
