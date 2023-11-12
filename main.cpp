@@ -25,7 +25,22 @@ int main() {
 
 
 
+/*
+ Trie test case
 
+
+    Trie trie;
+
+    // Insert keys
+    trie.insert("room 71");
+    trie.insert("room 70");
+
+    // Search for keys
+    std::cout << "room 71: " << (trie.search("room 71") ? "Found" : "Not Found") << std::endl;
+    std::cout << "room 60: " << (trie.search("room 60") ? "Found" : "Not Found") << std::endl;
+    std::cout << "room 70: " << (trie.search("room 70") ? "Found" : "Not Found") << std::endl;
+
+    */
 
     return 0;
 }

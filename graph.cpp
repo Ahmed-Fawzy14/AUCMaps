@@ -27,7 +27,7 @@ void Graph::createGraph() {
         {
             p.name = ""; //read from file
             p.weight = 0; //read from file
-            p.trie = t.getTrie();
+            p.trie= t;
             adjList[i].push_back(p);
 
         }
