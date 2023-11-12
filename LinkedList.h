@@ -29,7 +29,7 @@ public:
 
     void Append(T x);
 
-    void Delete();
+  //  void Delete();
 
     NodeL* getRoot();
 

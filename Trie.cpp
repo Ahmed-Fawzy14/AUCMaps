@@ -3,3 +3,10 @@
 //
 
 #include "Trie.h"
+
+Trie Trie::getTrie() {
+
+    Trie t;
+
+    return t;
+}

@@ -7,7 +7,7 @@
 
 #include <string>
 #include <iostream>
-#include <list>
+#include <vector>
 #include "Trie.h"
 #include "LinkedList.h"
 using namespace std;
@@ -16,10 +16,15 @@ class Graph{
 
 private:
 
+    enum Buildings {
+    Jameel, SSE,
+
+    };
+
     struct Node{
 
         string name;
-        Trie t;
+        Trie trie;
         int weight;
 
         Node(){
@@ -28,7 +33,7 @@ private:
 
         Node(string name, Trie t, int weight){
             this->name = name;
-            this->t = t;
+            this->trie = t;
             this->weight = weight;
 
         }
@@ -50,7 +55,7 @@ private:
 
     //Adj List
     int size; //number of buildings
-    LinkedList<Node> *adjList;
+    vector<vector<Node>> adjList;
 
 
 
@@ -61,7 +66,7 @@ public:
 
     Graph(int size);
 
-    void createGraph(string name[], Trie t[], int weight[]);
+    void createGraph();
 
     //need a funciton to initalize all nodes
     //give the node its name

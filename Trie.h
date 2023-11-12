@@ -8,6 +8,9 @@
 
 class Trie {
 
+public:
+
+    Trie getTrie();
 };
 
 

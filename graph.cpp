@@ -10,22 +10,27 @@ Graph::Graph(int size) {
 
     //Initialize Adj List
     this->size = size;
-    adjList = new LinkedList<Node>[size];
+//    adjList = new LinkedList<Node>[size];
 
 }
 
-void Graph::createGraph(string name[], Trie t[], int weight[]) {
+void Graph::createGraph() {
 
-
-    //for now we are taking a array of all node items and adding them to the list
-    //I need to test this
-
-    //this creates the nodes for the buildings but idk about the floors yet
     for(int i = 0; i<size; i++)
     {
-        Node *p = new Node(name[i], t[i], weight[i]);
-        LinkedList<Node> l(*p);
-        adjList[i] = l;
+        string name;
+        int weight;
+        Trie t;
+        Node p;
+
+        while(0)//not end of line
+        {
+            p.name = ""; //read from file
+            p.weight = 0; //read from file
+            p.trie = t.getTrie();
+            adjList[i].push_back(p);
+
+        }
 
     }
 
@@ -33,7 +38,7 @@ void Graph::createGraph(string name[], Trie t[], int weight[]) {
 
 Graph::~Graph() {
 
-    delete[] adjList;
+
 
 
 
