@@ -79,9 +79,9 @@ public:
 
     void createGraph(Buildings ind);
 
-    string readFile(string &theFile);
+    vector<string>  readFile(string &theFile);
 
-    string createSub(int &index, string &theFile);
+    string createSub(int &index, string &theFile, Buildings ind);
 
     vector<vector<Node>> getAdjlist();
 

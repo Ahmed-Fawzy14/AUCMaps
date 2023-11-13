@@ -15,8 +15,18 @@ int main() {
     int i = 0;
    // g.createSub(i);
    //there are two or so missing nodes
-    g.createGraph(g.BruceLLudwigFamilySquare);
+   g.createGraph(g.BruceLLudwigFamilySquare);
+
     g.createGraph(g.DrHamzaAlKohliInformationCentre);
+    g.test = g.getAdjlist();
+
+    g.createGraph(g.Gate1);
+    g.test = g.getAdjlist();
+
+    g.createGraph(g.AllamAmphitheatre);
+    g.test = g.getAdjlist();
+
+    g.createGraph(g.SchoolOfContinuingEducation);
     g.test = g.getAdjlist();
 
 

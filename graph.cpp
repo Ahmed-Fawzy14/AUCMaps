@@ -16,11 +16,14 @@ Graph::Graph(int size) {
 }
 
 
-string Graph::readFile(string &theFile) {
+vector<string> Graph::readFile(string &theFile) {
 
     string ret;
+    vector<string> str;
+    str.resize(size);
     string line;
     ifstream file("Data.txt");
+    int i =0;
     if(!file.is_open())
     {
         cerr<<"File is not open"<<endl;
@@ -29,32 +32,35 @@ string Graph::readFile(string &theFile) {
     {
         while(getline(file, line))
         {
-            ret += line + '\n';
+            str[i] += line + '\n';
+            i++;
         }
 
     }
 
     file.close();
 
-    theFile = ret;
+    //theFile = ret;
 
-    return ret;
+    return str;
 
 }
 
 
+//vector<string> s (each index is one line)
+//s[ind]
 
 
 //read file in creatEGraph and send it
-string Graph::createSub(int &index, string &theFile) {
+string Graph::createSub(int &index, string &theFile, Buildings ind) {
 
-    string ret = readFile(theFile);
+    vector<string> ret = readFile(theFile);
     string s;
     int i = index;
 //    std::string token = str.substr(0, pos);
-    while(ret[i] != ',')
+    while((ret[ind])[i] != ',')
     {
-        s += ret[i];
+        s += (ret[ind])[i] ;
         i++;
 
     }
@@ -105,15 +111,11 @@ void Graph::createGraph(Buildings ind) {
 
     int index = 0; //be careful
 
-    //while not end of line
-    //this is endling to early
-    //get loop is not right fix it becuase it is not working how I want it to
-    //should be j<get loop() and I need to fix get loop to work on more than one line
-    //ind maybe??
+    //the next index reads from the same area in the text file not the next line
     while (j<commaCount[ind]) {
         //index of substring to get name and weight seperatly
         int i = 0;
-        string sub = createSub(index, theFile);
+        string sub = createSub(index, theFile, ind);
         string number= {};
         int weight =0;
         Trie t;
