@@ -1,0 +1,5 @@
+BruceLLudwigFamilySquare 0,DrHamzaAlKohliInformationCentre 40,Gate1 200,AllamAmphitheatre 150,SchoolOfContinuingEducation 80,AUCCenterForArts 65,AUCPortal 70
+DrHamzaAlKohliInformationCentre 0,BruceLLudwigFamilySquare 40
+Gate1 0,BruceLLudwigFamilySquare 200
+AllamAmphitheatre 0,BruceLLudwigFamilySquare 150
+SchoolOfContinuingEducation 0,BruceLLudwigFamilySquare 80,Gate5 160

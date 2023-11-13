@@ -8,6 +8,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <fstream>
 #include "Trie.h"
 #include "LinkedList.h"
 using namespace std;
@@ -17,7 +18,7 @@ class Graph{
 private:
 
     enum Buildings {
-    Jameel, SSE,
+        BruceLLudwigFamilySquare, DrHamzaAlKohliInformationCentre, Gate1, AllamAmphitheatre, SchoolOfContinuingEducation,
 
     };
 
@@ -67,6 +68,10 @@ public:
     Graph(int size);
 
     void createGraph();
+
+    string readFile();
+
+    string createSub(string s, string ret);
 
     //need a funciton to initalize all nodes
     //give the node its name
