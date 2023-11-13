@@ -16,7 +16,7 @@ Graph::Graph(int size) {
 }
 
 
-string Graph::readFile() {
+string Graph::readFile(string &theFile) {
 
     string ret;
     string line;
@@ -36,6 +36,8 @@ string Graph::readFile() {
 
     file.close();
 
+    theFile = ret;
+
     return ret;
 
 }
@@ -44,9 +46,9 @@ string Graph::readFile() {
 
 
 //read file in creatEGraph and send it
-string Graph::createSub(int &index) {
+string Graph::createSub(int &index, string &theFile) {
 
-    string ret = readFile();
+    string ret = readFile(theFile);
     string s;
     int i = index;
 //    std::string token = str.substr(0, pos);
@@ -64,10 +66,22 @@ string Graph::createSub(int &index) {
 }
 
 
-int Graph::getLoop() {
+void Graph::getLoop(int commaCount[]) {
+    ifstream file("Data.txt");
+    string line;
+    int i = 0;
 
+    if (file.is_open()) {
+        while(getline(file, line)) {
+            commaCount[i] = count(line.begin(), line.end(), ',') + 1;
+            cout << "Number of commas in line: " << commaCount[i] << endl;
+            i++;
+        }
+        file.close();
+    } else {
+        cerr << "Unable to open file" << endl;
+    }
 
-    return 0;
 }
 
 
@@ -75,6 +89,12 @@ int Graph::getLoop() {
 void Graph::createGraph(Buildings ind) {
     ifstream file("Data.txt");
     string line;
+    string theFile;
+
+    int commaCount[100];
+
+    getLoop(commaCount);
+
     int j = 0;
 
     if (!file.is_open()) {
@@ -87,10 +107,13 @@ void Graph::createGraph(Buildings ind) {
 
     //while not end of line
     //this is endling to early
-    while (getline(file, line)) {
+    //get loop is not right fix it becuase it is not working how I want it to
+    //should be j<get loop() and I need to fix get loop to work on more than one line
+    //ind maybe??
+    while (j<commaCount[ind]) {
         //index of substring to get name and weight seperatly
         int i = 0;
-        string sub = createSub(index);
+        string sub = createSub(index, theFile);
         string number= {};
         int weight =0;
         Trie t;
@@ -112,7 +135,7 @@ void Graph::createGraph(Buildings ind) {
 
         }
         //read from file
-        p->trie = t.getTrie();
+        p->trie = t;
         p->weight = stoi(number);
         //test number of loops
         j++;

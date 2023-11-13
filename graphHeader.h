@@ -10,6 +10,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 #include "Trie.h"
 #include "LinkedList.h"
 using namespace std;
@@ -74,13 +75,13 @@ public:
     //reads a line and tell you how many elements are in it
     // then use this for the while loop (or a for loop)
     //commas +1
-    int getLoop();
+    void getLoop(int commaCount[]);
 
     void createGraph(Buildings ind);
 
-    string readFile();
+    string readFile(string &theFile);
 
-    string createSub(int &index);
+    string createSub(int &index, string &theFile);
 
     vector<vector<Node>> getAdjlist();
 

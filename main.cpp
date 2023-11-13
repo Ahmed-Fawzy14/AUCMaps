@@ -16,9 +16,7 @@ int main() {
    // g.createSub(i);
    //there are two or so missing nodes
     g.createGraph(g.BruceLLudwigFamilySquare);
-    g.test = g.getAdjlist();
-
-    //  g.createGraph(g.DrHamzaAlKohliInformationCentre);
+    g.createGraph(g.DrHamzaAlKohliInformationCentre);
     g.test = g.getAdjlist();
 
 
