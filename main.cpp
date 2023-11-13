@@ -13,13 +13,14 @@ int main() {
 
     Graph g(25);
     int i = 0;
-   // g.createSub(i);
-   //there are two or so missing nodes
+
+
    g.createGraph(g.BruceLLudwigFamilySquare);
 
     g.createGraph(g.DrHamzaAlKohliInformationCentre);
     g.test = g.getAdjlist();
 
+    //segmentation fault idk why
     g.createGraph(g.Gate1);
     g.test = g.getAdjlist();
 

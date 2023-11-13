@@ -58,7 +58,7 @@ string Graph::createSub(int &index, string &theFile, Buildings ind) {
     string s;
     int i = index;
 //    std::string token = str.substr(0, pos);
-    while((ret[ind])[i] != ',')
+    while((ret[ind])[i] != ',' && (ret[ind])[i] != '\0')
     {
         s += (ret[ind])[i] ;
         i++;
@@ -143,7 +143,6 @@ void Graph::createGraph(Buildings ind) {
         j++;
         adjList[ind].push_back(*p);
 
-        delete p;
 
         }
 
@@ -162,8 +161,6 @@ vector<vector<typename Graph::Node>> Graph::getAdjlist() {
 
 
 Graph::~Graph() {
-
-
 
 
 
