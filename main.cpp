@@ -11,11 +11,15 @@ int main() {
 
     //we need to pair the trie with its wieght maybe using NodeData?
 
-    Graph g(5);
+    Graph g(25);
     int i = 0;
-    g.createSub(i);
+   // g.createSub(i);
+   //there are two or so missing nodes
+    g.createGraph(g.BruceLLudwigFamilySquare);
+    g.test = g.getAdjlist();
 
-
+    //  g.createGraph(g.DrHamzaAlKohliInformationCentre);
+    g.test = g.getAdjlist();
 
 
 

@@ -9,6 +9,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <sstream>
 #include "Trie.h"
 #include "LinkedList.h"
 using namespace std;
@@ -17,10 +18,6 @@ class Graph{
 
 private:
 
-    enum Buildings {
-        BruceLLudwigFamilySquare, DrHamzaAlKohliInformationCentre, Gate1, AllamAmphitheatre, SchoolOfContinuingEducation,
-
-    };
 
     struct Node{
 
@@ -62,16 +59,30 @@ private:
 
 public:
 
+    enum Buildings {
+        BruceLLudwigFamilySquare, DrHamzaAlKohliInformationCentre, Gate1, AllamAmphitheatre, SchoolOfContinuingEducation,
+
+    };
+
+    vector<vector<Node>> test;
+
 
     Graph();
 
     Graph(int size);
 
-    void createGraph();
+    //reads a line and tell you how many elements are in it
+    // then use this for the while loop (or a for loop)
+    //commas +1
+    int getLoop();
+
+    void createGraph(Buildings ind);
 
     string readFile();
 
     string createSub(int &index);
+
+    vector<vector<Node>> getAdjlist();
 
     //need a funciton to initalize all nodes
     //give the node its name
