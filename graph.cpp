@@ -43,14 +43,20 @@ string Graph::readFile() {
 
 
 
-string Graph::createSub(string s, string ret) {
+string Graph::createSub(int &index) {
 
-for(char c: s)
-{
+    string ret = readFile();
+    string s;
+    int i = index;
+//    std::string token = str.substr(0, pos);
+    while(ret[i] != ',')
+    {
+        s += ret[i];
+        i++;
 
+    }
 
-
-}
+    index = i;
 
     return s;
 }
@@ -60,9 +66,14 @@ for(char c: s)
 
 void Graph::createGraph() {
 
+    int index = 0;
+    createSub(index);
+
+
+
     for(int i = 0; i<size; i++)
     {
-        string name;
+        /*string name;
         int weight;
         Trie t;
         Node p;
@@ -72,9 +83,9 @@ void Graph::createGraph() {
             p.name = ""; //read from file
             p.weight = 0; //read from file
             p.trie = t.getTrie();
-            adjList[i].push_back(p);
+            adjList[i].push_back(p);*/
 
-        }
+        //}
 
     }
 

@@ -12,7 +12,8 @@ int main() {
     //we need to pair the trie with its wieght maybe using NodeData?
 
     Graph g(5);
-    g.readFile();
+    int i = 0;
+    g.createSub(i);
 
 
 

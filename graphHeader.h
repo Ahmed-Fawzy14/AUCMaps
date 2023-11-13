@@ -71,7 +71,7 @@ public:
 
     string readFile();
 
-    string createSub(string s, string ret);
+    string createSub(int &index);
 
     //need a funciton to initalize all nodes
     //give the node its name
