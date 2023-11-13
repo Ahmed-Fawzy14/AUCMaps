@@ -8,11 +8,13 @@ using namespace std;
 Trie::Trie()
 {
     root= new trieNode();
+
 }
 
-void Trie:: insert(string room)
+void Trie:: insert(string room, string location)
 {
     trieNode* n=root;
+
 
     for (int i = 0; i < room.length(); i++)
     {
@@ -23,6 +25,7 @@ void Trie:: insert(string room)
         n = n->children[c];
     }
     n->word = true;
+    n->building=location;
 }
 
 bool Trie:: search(string room)
@@ -40,6 +43,29 @@ bool Trie:: search(string room)
 
     return n->word;
 }
+
+string Trie::loc(string room)
+{
+   trieNode* m = root;
+
+    for (int i = 0; i < room.length(); i++)
+    {
+        char c = room[i];
+        if (!m->children[c])
+            return "Nothing found";
+
+        m = m->children[c];
+    }
+
+    if (m->word)
+        return m->building;
+    else
+        return "Nothing found";
+}
+
+
+
+
 
 
 
