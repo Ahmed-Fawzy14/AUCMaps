@@ -9,7 +9,7 @@ JameelSecondFloor 0,JameelFirstFloor 5,
 BusGate 0,SSE 170,BarlettPlaza 100,
 SSE 0,SSEPlaza 50,SSEFirstFloor 5,BusGate 170,BarlettPlaza 100,
 SSEFirstFloor 0,SSE 5,SSESecondFloor 5,
-SSESecondFloor 0,SSEFirstFloor 5,SSERoof 5,
+SSESecondFloor 0,SSEFirstFloor 5,SSER 5,
 SSERoof 0,SSESecondFloor 5,
 SSEPlaza 0,SSE 50,Hatem 85,BarlettPlaza 100,LinkPlaza 80,Quick 35,
 Hatem 0,SSEPlaza 85,BarlettPlaza 60,HatemFirstFloor 5,
@@ -19,7 +19,36 @@ HatemThird 0,HatemSecondFloor 5,HatemRoof 0,
 HatemRoof 0,HatemThird 5,
 Quick 0,OmarMohsen 85,SSEPlaza 35,Waleed 85,
 OmarMohsen 0,Quick 85,Waleed 80,
-Waleed 0,WaleedFirstFloor 5,TabaliPlaza 90,LinkPlaza 50,
+Waleed 0,OmarMohsen 80,Quick 85,WaleedFirstFloor 5,TabaliPlaza 90,LinkPlaza 50,
 WaleedFirstFloor 0,Waleed 5,WaleedSecondFloor 5,
 WaleedSecondFloor 0,WaleedFirstFloor 5,
+AUCCenterForArts 0,ArtFF 5,BruceLLudwigFamilySquare 65,TabaliPlaza 75,
+ArtFF 0,AUCCenterForArts 5,
+TabaliPlaza 0,AUCCenterForArts 75,SocialResearchCenter 75,ArtsGate 50,Waleed 90,
+ArtsGate 0,Gate5 150,TabaliPlaza 50,
+Gate5 0,ArtsGate 150,SchoolOfContinuingEducation 160,
+SocialResearchCenter 0,TabaliPlaza 75,AUCPortal 40,LinkPlaza 120,
+AUCPortal 0,BruceLLudwigFamilySquare 70,WatsonHouse 65,SocialResearchCenter 40,LinkPlaza 130,WestGarden 175,
+WatsonHouse 0,AUCPortal 65,WestGarden 190,
+LinkPlaza 0,SSEPlaza 80,Waleed 50,SocialResearchCenter 120,AUCPortal 130,Administration 50,
+Administration 0,LinkPlaza 50,AdministrationGarden 5,
+AdministrationGarden 0,WestGarden 80,Administration 5,AdministrationFirstFloor 5,
+AdministrationFirstFloor 0,AdministrationGarden 5,AdministrationSecondFloor 5,
+AdministrationSecondFloor 0,AdministrationFirstFloor 5,
+WestGarden 0,WatsonHouse 190,AUCPortal 175,AdministrationGarden 80,
+BarlettPlaza 0,Library 55,Hatem 60,SSEPlaza 100,SSE 100,BusGate 100,Jameel 70,ArnoldPavillion 200,AUCCVC 220,CampusCenter 100,
+Library 0,BarlettPlaza 55,LibraryGarden 5,
+LibraryGarden 0,NorthGarden 105,Library 5,LibraryFirstFloor 5,
+LibraryFirstFloor 0,LibraryGarden 5,LibrarySecondFloor 5,
+LibrarySecondFloor 0,LibraryFirstFloor 5,LibraryThirdFloor 5,
+LibraryThirdFloor 0,LibrarySecondFloor 5,
+
+
+
+
+
+
+
+
+
 
