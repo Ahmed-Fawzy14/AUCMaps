@@ -1,5 +1,25 @@
-BruceLLudwigFamilySquare 0,DrHamzaAlKohliInformationCentre 40,Gate1 200,AllamAmphitheatre 150,SchoolOfContinuingEducation 80,AUCCenterForArts 65,AUCPortal 70
-DrHamzaAlKohliInformationCentre 0,BruceLLudwigFamilySquare 40
-Gate1 0,BruceLLudwigFamilySquare 200
-AllamAmphitheatre 0,BruceLLudwigFamilySquare 150
-SchoolOfContinuingEducation 0,BruceLLudwigFamilySquare 80,Gate5 160
+BruceLLudwigFamilySquare 0,DrHamzaAlKohliInformationCentre 40,Gate1 200,AllamAmphitheatre 150,SchoolOfContinuingEducation 80,AUCCenterForArts 65,AUCPortal 70,
+DrHamzaAlKohliInformationCentre 0,BruceLLudwigFamilySquare 40,
+Gate1 0,BruceLLudwigFamilySquare 200,
+AllamAmphitheatre 0,BruceLLudwigFamilySquare 150,
+SchoolOfContinuingEducation 0,BruceLLudwigFamilySquare 80,Gate5 160,
+Jameel 0,BarlettPlaza 70,JameelFirstFloor 5,
+JameelFirstFloor 0,Jameel 5,JameelSecondFloor 5,
+JameelSecondFloor 0,JameelFirstFloor 5,
+BusGate 0,SSE 170,BarlettPlaza 100,
+SSE 0,SSEPlaza 50,SSEFirstFloor 5,BusGate 170,BarlettPlaza 100,
+SSEFirstFloor 0,SSE 5,SSESecondFloor 5,
+SSESecondFloor 0,SSEFirstFloor 5,SSERoof 5,
+SSERoof 0,SSESecondFloor 5,
+SSEPlaza 0,SSE 50,Hatem 85,BarlettPlaza 100,LinkPlaza 80,Quick 35,
+Hatem 0,SSEPlaza 85,BarlettPlaza 60,HatemFirstFloor 5,
+HatemFirstFloor 0,Hatem 0,HatemSecondFloor 5,
+HatemSecondFloor 0,HatemFirstFloor 5,HatemThird 5,
+HatemThird 0,HatemSecondFloor 5,HatemRoof 0,
+HatemRoof 0,HatemThird 5,
+Quick 0,OmarMohsen 85,SSEPlaza 35,Waleed 85,
+OmarMohsen 0,Quick 85,Waleed 80,
+Waleed 0,WaleedFirstFloor 5,TabaliPlaza 90,LinkPlaza 50,
+WaleedFirstFloor 0,Waleed 5,WaleedSecondFloor 5,
+WaleedSecondFloor 0,WaleedFirstFloor 5,
+

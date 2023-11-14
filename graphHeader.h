@@ -61,9 +61,11 @@ private:
 public:
 
     enum Buildings {
-        BruceLLudwigFamilySquare, DrHamzaAlKohliInformationCentre, Gate1, AllamAmphitheatre, SchoolOfContinuingEducation,
+        BruceLLudwigFamilySquare, DrHamzaAlKohliInformationCentre, Gate1, AllamAmphitheatre, SchoolOfContinuingEducation, Jameel, JameelFirstFloor, JameelSecondFloor, BusGate, SSE, SSEFirstFloor, SSESecondFloor, SSERoof, SSEPlaza, Hatem, HatemFirstFloor, HatemSecondFloor, HatemThird, HatemRoof, Quick, OmarMohsen, Waleed, WaleedFirstFloor, WaleedSecondFloor
 
     };
+
+
 
     vector<vector<Node>> test;
 

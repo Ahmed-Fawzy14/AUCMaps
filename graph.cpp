@@ -53,23 +53,23 @@ vector<string> Graph::readFile(string &theFile) {
 
 //read file in creatEGraph and send it
 string Graph::createSub(int &index, string &theFile, Buildings ind) {
-
     vector<string> ret = readFile(theFile);
     string s;
     int i = index;
-//    std::string token = str.substr(0, pos);
-    while((ret[ind])[i] != ',' && (ret[ind])[i] != '\0')
-    {
-        s += (ret[ind])[i] ;
+    while(i < ret[ind].length() && (ret[ind])[i] != ',') {
+        s += (ret[ind])[i];
         i++;
-
     }
 
-    //the +1 may mess things up
-    index = i+1;
+    if (i == ret[ind].length()) {
+        index = 0;
+    } else {
+        index = i + 1;
+    }
 
     return s;
 }
+
 
 
 void Graph::getLoop(int commaCount[]) {
@@ -79,8 +79,7 @@ void Graph::getLoop(int commaCount[]) {
 
     if (file.is_open()) {
         while(getline(file, line)) {
-            commaCount[i] = count(line.begin(), line.end(), ',') + 1;
-            cout << "Number of commas in line: " << commaCount[i] << endl;
+            commaCount[i] = count(line.begin(), line.end(), ',');
             i++;
         }
         file.close();

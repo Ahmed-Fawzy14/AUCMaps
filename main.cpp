@@ -11,26 +11,59 @@ int main() {
 
     //we need to pair the trie with its wieght maybe using NodeData?
 
-    Graph g(25);
+    Graph g(100);
     int i = 0;
 
 
-   g.createGraph(g.BruceLLudwigFamilySquare);
-
+    g.createGraph(g.BruceLLudwigFamilySquare);
+    cout<<1<<endl;
     g.createGraph(g.DrHamzaAlKohliInformationCentre);
-    g.test = g.getAdjlist();
-
-    //segmentation fault idk why
+    cout<<1<<endl;
     g.createGraph(g.Gate1);
-    g.test = g.getAdjlist();
-
+    cout<<1<<endl;
     g.createGraph(g.AllamAmphitheatre);
-    g.test = g.getAdjlist();
-
+    cout<<1<<endl;
     g.createGraph(g.SchoolOfContinuingEducation);
+    cout<<1<<endl;
+    g.createGraph(g.Jameel);
+    cout<<1<<endl;
+    g.createGraph(g.JameelFirstFloor);
+    cout<<1<<endl;
+    g.createGraph(g.JameelSecondFloor);
+    cout<<1<<endl;
+    g.createGraph(g.BusGate);
+    cout<<1<<endl;
+    g.createGraph(g.SSE);
+    cout<<1<<endl;
+    g.createGraph(g.SSEFirstFloor);
+    cout<<1<<endl;
+    g.createGraph(g.SSESecondFloor);
+    cout<<1<<endl;
+    g.createGraph(g.SSERoof);
+    cout<<1<<endl;
+    g.createGraph(g.SSEPlaza);
+    cout<<1<<endl;
+    g.createGraph(g.Hatem);
+    cout<<1<<endl;
+    g.createGraph(g.HatemFirstFloor);
+    cout<<1<<endl;
+    g.createGraph(g.HatemSecondFloor);
+    cout<<1<<endl;
+    g.createGraph(g.HatemThird);
+    cout<<1<<endl;
+    g.createGraph(g.HatemRoof);
+    cout<<1<<endl;
+    g.createGraph(g.Quick);
+    cout<<1<<endl;
+    g.createGraph(g.OmarMohsen);
+    cout<<1<<endl;
+    g.createGraph(g.Waleed);
+    cout<<1<<endl;
+    g.createGraph(g.WaleedFirstFloor);
+    cout<<1<<endl;
+    g.createGraph(g.WaleedSecondFloor);
+    cout<<1<<endl;
     g.test = g.getAdjlist();
-
-
 
     return 0;
 }
