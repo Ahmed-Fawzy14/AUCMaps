@@ -59,6 +59,29 @@ int main() {
     g.createGraph(g.LibraryFirstFloor);
     g.createGraph(g.LibrarySecondFloor);
     g.createGraph(g.LibraryThirdFloor);
+    g.createGraph(g.CVC);
+    g.createGraph(g.CampusCenter);
+    g.createGraph(g.EastGarden);
+    g.createGraph(g.NorthGarden);
+    g.createGraph(g.GardensGate);
+    g.createGraph(g.Gate2);
+    g.createGraph(g.AUCResid);
+    g.createGraph(g.AUCResidFF);
+    g.createGraph(g.AUCResidSS);
+    g.createGraph(g.SportsPlaza);
+    g.createGraph(g.EastEntrance);
+    g.createGraph(g.SportsComplex);
+    g.createGraph(g.PepsiGate);
+    g.createGraph(g.Gate4);
+    g.createGraph(g.ArnoldPavillion);
+    g.createGraph(g.SportGate);
+    g.createGraph(g.IndoorSports);
+    g.createGraph(g.SportsFF);
+    g.createGraph(g.ComplexPool);
+    g.createGraph(g.ComplexOutdoor);
+    g.createGraph(g.Gate3);
+
+
     g.test = g.getAdjlist();
 
 
