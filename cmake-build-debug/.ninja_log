@@ -1,14 +1,7 @@
 # ninja log v5
-5	878	7217444873864401	CMakeFiles/Applied_Project.dir/main.cpp.obj	c6f48d098157deab
-879	1055	7217444875566665	Applied_Project.exe	bf69a6c3b5b30b5d
-14	122	7215603274791888	CMakeFiles/Applied_Project.dir/Trie.cpp.obj	554c1607475cbd65
-0	94	7215603274498357	CMakeFiles/Applied_Project.dir/LinkedList.cpp.obj	53bfa03fa0ed9842
-5	723	7213326427038559	CMakeFiles/Applied_Project.dir/createGraph.cpp.obj	d951c9af71379b6b
-18	1314	7217442055043022	CMakeFiles/Applied_Project.dir/graph.cpp.obj	43f83db13f7c7eee
-2	654	7215603271853200	build.ninja	cabc56d60cb49efe
-4	950	7217444971866879	CMakeFiles/Applied_Project.dir/main.cpp.obj	c6f48d098157deab
-970	1197	7217444974249730	Applied_Project.exe	bf69a6c3b5b30b5d
-9	997	7217445044238170	CMakeFiles/Applied_Project.dir/main.cpp.obj	c6f48d098157deab
-998	1208	7217445046207120	Applied_Project.exe	bf69a6c3b5b30b5d
-4	1029	7217445106943791	CMakeFiles/Applied_Project.dir/main.cpp.obj	c6f48d098157deab
-1030	1258	7217445109140030	Applied_Project.exe	bf69a6c3b5b30b5d
+7	1038	7218196808343404	CMakeFiles/Applied_Project.dir/main.cpp.obj	c6f48d098157deab
+1337	1587	7218196813748921	Applied_Project.exe	bf69a6c3b5b30b5d
+28	216	7218196800124679	CMakeFiles/Applied_Project.dir/Trie.cpp.obj	554c1607475cbd65
+21	168	7218196799537341	CMakeFiles/Applied_Project.dir/LinkedList.cpp.obj	53bfa03fa0ed9842
+15	1337	7218196811313010	CMakeFiles/Applied_Project.dir/graph.cpp.obj	43f83db13f7c7eee
+2	654	7218197125723678	build.ninja	cabc56d60cb49efe

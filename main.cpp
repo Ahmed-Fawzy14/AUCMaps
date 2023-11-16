@@ -15,6 +15,7 @@ int main() {
     int i = 0;
 
 
+//get it to read the data and input it form a text file
     g.createGraph(g.BruceLLudwigFamilySquare);
     g.createGraph(g.DrHamzaAlKohliInformationCentre);
     g.createGraph(g.Gate1);
