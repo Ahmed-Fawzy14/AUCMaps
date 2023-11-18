@@ -32,14 +32,14 @@ int main() {
     Trie trie;
 
     // Insert keys
-    trie.insert("room 71","SSE");
-    trie.insert("room 70","Huss");
+    trie.insert("room 71","SSE", "Classroom");
+    trie.insert("room 70","Huss","Bathroom");
 
     // Search for keys
 
-    cout << "room 71: " << (trie.search("room 71") ? "Found" : "Not Found") << " in building " << trie.loc("room 71") << endl;
-    cout << "room 60: " << (trie.search("room 60") ? "Found" : "Not Found") << " in building " << trie.loc("room 60") << endl;
-    cout << "room 70: " << (trie.search("room 70") ? "Found" : "Not Found") << " in building " << trie.loc("room 70") << endl;
+    cout << "room 71: " << (trie.search("room 71") ? "Found" : "Not Found") << " in building " << trie.loc("room 71") << " Room type: "<<trie.model("room 71")<< endl;
+    cout << "room 60: " << (trie.search("room 60") ? "Found" : "Not Found") << " in building " << trie.loc("room 60") << " Room type: "<<trie.model("room 60")<< endl;
+    cout << "room 70: " << (trie.search("room 70") ? "Found" : "Not Found") << " in building " << trie.loc("room 70") << " Room type: "<<trie.model("room 70")<< endl;
 
 
 

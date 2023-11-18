@@ -11,7 +11,7 @@ Trie::Trie()
 
 }
 
-void Trie:: insert(string room, string location)
+void Trie:: insert(string room, string location, string t)
 {
     trieNode* n=root;
 
@@ -26,6 +26,7 @@ void Trie:: insert(string room, string location)
     }
     n->word = true;
     n->building=location;
+    n->type=t;
 }
 
 bool Trie:: search(string room)
@@ -63,6 +64,24 @@ string Trie::loc(string room)
         return "Nothing found";
 }
 
+string Trie::model(string room)
+{
+    trieNode* m = root;
+
+    for (int i = 0; i < room.length(); i++)
+    {
+        char c = room[i];
+        if (!m->children[c])
+            return "Nothing found";
+
+        m = m->children[c];
+    }
+
+    if (m->word)
+        return m->type;
+    else
+        return "Nothing found";
+}
 
 
 
