@@ -1,8 +1,7 @@
 #include <iostream>
-#include "LinkedList.cpp"
-#include "LinkedList.h"
 #include "graphHeader.h"
 #include "Trie.h"
+#include "AStar.h"
 
 
 
@@ -15,7 +14,6 @@ int main() {
     int i = 0;
 
 
-//get it to read the data and input it form a text file
     g.createGraph(g.BruceLLudwigFamilySquare);
     g.createGraph(g.DrHamzaAlKohliInformationCentre);
     g.createGraph(g.Gate1);
@@ -83,8 +81,30 @@ int main() {
     g.createGraph(g.Gate3);
 
 
+   // g.test = g.getAdjlist();
+
+    Graph::Buildings startBuilding = Graph::Gate1; // Choose your start building
+    Graph::Buildings goalBuilding = Graph::Library; // Choose your goal building
+    AStar ast;
+
+ //   g.createGraph(startBuilding);
+ //   g.createGraph(goalBuilding);
+
     g.test = g.getAdjlist();
+
+    Graph::Node startNode = g.test[startBuilding][0]; // Assuming there's at least one node in the start building
+    Graph::Node goalNode = g.test[goalBuilding][0];
+
+    ast.aStar(startNode, goalNode, g.test);
+    const vector<Graph:: Node>& optimalPath = ast.getOptimalPath();
+    double optimalCost = ast.getOptimalCost();
+    cout << "Optimal Path: ";
+
+    cout <<"Optimal cost: "<< optimalCost<< endl;
+
+
 
 
     return 0;
 }
+

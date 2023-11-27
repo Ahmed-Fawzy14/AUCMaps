@@ -1,29 +1,47 @@
 //
-// Created by Fawzy on 11/16/2023.
+// Created by Fawzy on 11/24/2023.
 //
 
 #ifndef APPLIED_PROJECT_ASTAR_H
 #define APPLIED_PROJECT_ASTAR_H
+// AStar.h
 
-//Created by Joudy El Gayar
-#ifndef ASTAR_H
-#define ASTAR_H
+#include "graphHeader.h"//  for the node def
+#include<vector>
 
-#include "GraphHeader.h"
-#include <vector>
-using namespace std;
 
 class AStar {
 public:
-    static vector<typename Graph::Node*> findPath(Graph& graph, string start, string goal);
 
-private:
-    static double heuristic(const Graph::Node* node, const string& goal);
-    static double getDirectDistance(const Graph::Node* node, const string& goal);
-
-
+    struct AStarNode {
+         Graph::Node node;
+        double cost;       // Cost from the start node to this node
+        double heuristic;  // Heuristic estimate from this node to the goal
+        bool operator<(const AStarNode& other) const {
+            return cost + heuristic > other.cost + other.heuristic;
+        }
     };
 
-#endif // ASTAR_H
+    void aStar(const  Graph::Node& start, const Graph::Node& goal, const vector<vector< Graph::Node> >& adjList);
+    const vector< Graph::Node>& getOptimalPath() const;
+    double calculateHeuristic(const  typename Graph::Node& current, const typename Graph::Node& goal);
+    void reconstructPath(const typename Graph::Node& start, const  typename Graph::Node& goal, const vector<vector< Graph::Node> >& adjList);
+    vector< Graph::Node> optimalPath;
+    double getOptimalCost() const;
+    double totalCost;
+private:
+
+
+
+
+};
+
+
 
 #endif //APPLIED_PROJECT_ASTAR_H
+
+
+
+
+
+

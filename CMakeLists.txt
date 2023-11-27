@@ -11,4 +11,5 @@ add_executable(Applied_Project main.cpp
         LinkedList.h
         LinkedList.cpp
         AStar.h
-        AStar.cpp)
+        Astar.cpp
+)
