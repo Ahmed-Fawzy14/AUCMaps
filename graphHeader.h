@@ -11,6 +11,9 @@
 #include <fstream>
 #include <sstream>
 #include <algorithm>
+#include <limits>
+#include <queue>
+
 #include "Trie.h"
 #include "LinkedList.h"
 #include <unordered_map>
@@ -61,7 +64,7 @@ public:
 
 
     enum Buildings {
-        BruceLLudwigFamilySquare, DrHamzaAlKohliInformationCentre, Gate1, AllamAmphitheatre, SchoolOfContinuingEducation, Jameel, JameelFirstFloor, JameelSecondFloor, BusGate, SSE, SSEFirstFloor, SSESecondFloor, SSERoof, SSEPlaza, Hatem, HatemFirstFloor, HatemSecondFloor, HatemThird, HatemRoof, Quick, OmarMohsen, Waleed, WaleedFirstFloor, WaleedSecondFloor,AUCCenterForArts,ArtFF,TabaliPlaza,ArtsGate,Gate5,SocialResearchCenter,AUCPortal,WatsonHouse,LinkPlaza,Administration,AdministrationGarden,AdministrationFirstFloor,AdministrationSecondFloor,WestGarden,BarlettPlaza,Library,LibraryGarden,LibraryFirstFloor,LibrarySecondFloor,LibraryThirdFloor,CVC,CampusCenter,EastGarden,NorthGarden,GardensGate,Gate2,AUCResid,AUCResidFF,AUCResidSS,SportsPlaza,EastEntrance,SportsComplex,PepsiGate,Gate4,ArnoldPavillion,SportGate,IndoorSports,SportsFF,ComplexPool,ComplexOutdoor,Gate3
+        BruceLLudwigFamilySquare, DrHamzaAlKohliInformationCentre, Gate1, AllamAmphitheatre, SchoolOfContinuingEducation, AUCPortal,AUCCenterForArts,Jameel, JameelFirstFloor, JameelSecondFloor, BusGate, SSE, SSEFirstFloor, SSESecondFloor, SSERoof, SSEPlaza, Hatem, HatemFirstFloor, HatemSecondFloor, HatemThird, HatemRoof, Quick, OmarMohsen, Waleed, WaleedFirstFloor, WaleedSecondFloor,ArtFF,TabaliPlaza,ArtsGate,Gate5,SocialResearchCenter,WatsonHouse,LinkPlaza,Administration,AdministrationGarden,AdministrationFirstFloor,AdministrationSecondFloor,WestGarden,BarlettPlaza,Library,LibraryGarden,LibraryFirstFloor,LibrarySecondFloor,LibraryThirdFloor,CVC,CampusCenter,EastGarden,NorthGarden,GardensGate,Gate2,AUCResid,AUCResidFF,AUCResidSS,SportsPlaza,EastEntrance,SportsComplex,PepsiGate,Gate4,ArnoldPavillion,SportGate,IndoorSports,SportsFF,ComplexPool,ComplexOutdoor,Gate3
 
     };
 
@@ -69,9 +72,10 @@ public:
 
 
 
-    vector<vector<Node> > test;
+    vector<vector<Node>> test;
 
-
+    void buildNodeToIndexMap();
+    unordered_map<int, string> buildIndexToNodeMap();
     Graph();
 
     Graph(int size);
@@ -80,14 +84,16 @@ public:
     // then use this for the while loop (or a for loop)
     //commas +1
     void getLoop(int commaCount[]);
-
     void createGraph(Buildings ind);
 
     vector<string>  readFile(string &theFile);
 
     string createSub(int &index, string &theFile, Buildings ind);
+    void dijkstra(int startNode);
 
     vector<vector<Node> > getAdjlist();
+
+    int findNodeIndex(const string& nodeName);
 
     //need a funciton to initalize all nodes
     //give the node its name

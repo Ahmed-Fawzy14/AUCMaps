@@ -37,7 +37,7 @@ void printMatrix(const vector<vector<int>>& matrix) {
 int main() {
 
 
-    Graph g(100);
+    Graph g(80);
     int i = 0;
 
 
@@ -108,14 +108,24 @@ int main() {
     g.createGraph(g.Gate3);
 
    g.test = g.getAdjlist();
-  // g.print();
-   unordered_map<string, string> predecessors;
-   unordered_map<string, int> dist;
-   dijkstra(g, "Library", dist, predecessors);
-   printPath(predecessors, "Library", "LibraryThirdFloor", dist);
 
-//    vector<vector<int>> t = convert(g.getAdjlist(),g.nodeToIndexMap);
 
+    g.buildNodeToIndexMap();
+
+  //g.print();
+
+//   Graph p(100); // Assuming 7 nodes in the graph
+  //   g.createGraph(Graph::SSE); // Customize with your starting node
+
+    Graph::Buildings startNode = Graph::BruceLLudwigFamilySquare; // Customize with your starting node
+ //   Graph::Buildings endNode = Graph::SocialResearchCenter;   // Customize with your ending node
+
+   // int shortestDistance = g.findShortestDistance(startNode, endNode, g);
+    g.dijkstra(startNode);
+
+    cout<<g.findNodeIndex("Jameel");
+    // Print the shortest distance between the start and end nodes
+//    cout << "Shortest distance from node " << startNode << " to node " << endNode << ": " << shortestDistance << endl;
 
 
     return 0;

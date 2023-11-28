@@ -4,6 +4,7 @@
 
 
 #include "graphHeader.h"
+#include <queue>
 
 
 Graph::Graph(int size) {
@@ -141,16 +142,106 @@ void Graph::createGraph(Buildings ind) {
         //test number of loops
         j++;
         adjList[ind].push_back(*p);
-        addNodeToIndexMapping(p->name,ind);
-
+       // addNodeToIndexMapping(p->name,ind);
+        //nodeToIndexMap[p->name] = j;
+      //  cout<<"nodeToIndex: "<<nodeToIndexMap[p->name]<<" j: "<<j<<endl;
         }
 
 
 
+
+
+}
+
+
+
+
+void Graph::dijkstra(int startNode) {
+    vector<int> dist(size, INT_MAX); // Distance of all nodes from startNode
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+
+    dist[startNode] = 0;
+    pq.push(make_pair(0, startNode)); // (distance, node)
+
+    cout << "Starting Dijkstra's algorithm from node " << startNode << endl;
+
+    while (!pq.empty()) {
+        int distance = pq.top().first;
+        int currentNode = pq.top().second;
+        pq.pop();
+
+        cout << "Visiting node " << currentNode << " with distance " << distance << endl;
+
+        // Skip the first node in the adjacency list if it represents a self-link
+        bool isFirstNode = true;
+
+        // Iterate through all the adjacent nodes of currentNode
+        for (auto& adjNode : adjList[currentNode]) {
+            // Skip if it's the first node and a self-link
+            if (isFirstNode) {
+                isFirstNode = false;
+                continue;
+            }
+
+            int nodeIndex = nodeToIndexMap[adjNode.name]; // Find the index of the adjacent node
+            int nodeDistance = distance + adjNode.weight;
+
+            cout << "Checking adjacent node " << adjNode.name << " (Index: " << nodeIndex << ") with edge weight " << adjNode.weight << endl;
+
+            // Check if a shorter path is found
+            if (nodeDistance < dist[nodeIndex]) {
+                dist[nodeIndex] = nodeDistance;
+                pq.push(make_pair(nodeDistance, nodeIndex));
+                cout << "Updating distance of node " << adjNode.name << " to " << nodeDistance << endl;
+            }
+        }
+    }
+
+    // Print or process the shortest distances
+    for (int i = 0; i < size; i++) {
+        if(dist[i] == INT_MAX){
+
+        }
+        else
+            cout << "Shortest distance to node " << i << " is " << dist[i] << endl;
+    }
+}
+
+
+
+void Graph::buildNodeToIndexMap() {
+    nodeToIndexMap.clear();
+
+    // Assuming that each node appears once in the adjacency list
+    // and its index is determined by its position in this list
+    for (int i = 0; i < 64; ++i) {
+        // The first node in each list represents the node for that index
+        string nodeName = adjList[i][0].name; // Assuming the first node in each list is the node itself
+        nodeToIndexMap[nodeName] = i;
     }
 
 
+}
 
+int Graph::findNodeIndex(const string& nodeName) {
+    auto it = nodeToIndexMap.find(nodeName);
+
+    if (it != nodeToIndexMap.end()) {
+        // Node found, return its index
+        return it->second;
+    } else {
+        // Node not found, return an indicator (e.g., -1)
+        return -1;
+    }
+}
+
+void printToIndex(Graph j)
+{
+
+
+
+
+}
 
 
 
@@ -158,10 +249,6 @@ vector<vector<typename Graph::Node>> Graph::getAdjlist() {
     return adjList;
 }
 
-
-void Graph::addNodeToIndexMapping(const std::string& nodeName, Buildings index) {
-    nodeToIndexMap[nodeName] = index;
-}
 
 
 
@@ -172,7 +259,7 @@ void Graph::print(){
     {
         for (int j = 0; j<adjList[i].size(); j++)
         {
-            cout<<adjList[i][j].name<<"-> ";
+            cout<<adjList[i][j].name<<"-> "<<adjList[i][j].weight;
         }
         cout<<endl;
     }
