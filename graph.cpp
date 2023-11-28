@@ -141,7 +141,7 @@ void Graph::createGraph(Buildings ind) {
         //test number of loops
         j++;
         adjList[ind].push_back(*p);
-
+        addNodeToIndexMapping(p->name,ind);
 
         }
 
@@ -159,6 +159,27 @@ vector<vector<typename Graph::Node>> Graph::getAdjlist() {
 }
 
 
+void Graph::addNodeToIndexMapping(const std::string& nodeName, Buildings index) {
+    nodeToIndexMap[nodeName] = index;
+}
+
+
+
+
+void Graph::print(){
+
+    for(int i = 0; i<adjList.size(); i++)
+    {
+        for (int j = 0; j<adjList[i].size(); j++)
+        {
+            cout<<adjList[i][j].name<<"-> ";
+        }
+        cout<<endl;
+    }
+
+
+
+}
 
 
 Graph::~Graph() {

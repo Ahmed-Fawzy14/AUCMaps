@@ -1,14 +1,41 @@
 #include <iostream>
-#include "graphHeader.h"
 #include "Trie.h"
-#include "AStar.h"
+#include "Astar.h"
+#include <queue>
+#include <unordered_map>
+#include <vector>
+#include <limits>
+
+
+vector<vector<int>> convert(const vector<vector<Graph::Node>>& adjList, const unordered_map<string, int>& nodeToIndexMap)
+{
+    int n = nodeToIndexMap.size(); // Number of nodes
+    vector<vector<int>> matrix(n, vector<int>(n, 0)); // Initialize matrix with 0s
+
+    for (int i = 0; i < adjList.size(); ++i) {
+        for (const auto& node : adjList[i]) {
+            int j = nodeToIndexMap.at(node.name); // Get the index of the node
+            matrix[i][j] = node.weight; // Set the weight in the matrix
+        }
+    }
+
+    return matrix;
+}
+// Function to display adjacency matrix
+void printMatrix(const vector<vector<int>>& matrix) {
+    for (int i = 0; i < matrix.size(); i++) {
+        for (int j = 0; j < matrix[i].size(); j++) {
+            cout << matrix[i][j] << "\t";
+        }
+        cout << endl;
+    }
+}
 
 
 
 
 int main() {
 
-    //we need to pair the trie with its wieght maybe using NodeData?
 
     Graph g(100);
     int i = 0;
@@ -80,28 +107,14 @@ int main() {
     g.createGraph(g.ComplexOutdoor);
     g.createGraph(g.Gate3);
 
+   g.test = g.getAdjlist();
+  // g.print();
+   unordered_map<string, string> predecessors;
+   unordered_map<string, int> dist;
+   dijkstra(g, "Library", dist, predecessors);
+   printPath(predecessors, "Library", "LibraryThirdFloor", dist);
 
-   // g.test = g.getAdjlist();
-
-    Graph::Buildings startBuilding = Graph::Gate1; // Choose your start building
-    Graph::Buildings goalBuilding = Graph::Library; // Choose your goal building
-    AStar ast;
-
- //   g.createGraph(startBuilding);
- //   g.createGraph(goalBuilding);
-
-    g.test = g.getAdjlist();
-
-    Graph::Node startNode = g.test[startBuilding][0]; // Assuming there's at least one node in the start building
-    Graph::Node goalNode = g.test[goalBuilding][0];
-
-    ast.aStar(startNode, goalNode, g.test);
-    const vector<Graph:: Node>& optimalPath = ast.getOptimalPath();
-    double optimalCost = ast.getOptimalCost();
-    cout << "Optimal Path: ";
-
-    cout <<"Optimal cost: "<< optimalCost<< endl;
-
+//    vector<vector<int>> t = convert(g.getAdjlist(),g.nodeToIndexMap);
 
 
 

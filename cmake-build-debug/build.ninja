@@ -73,12 +73,6 @@ build CMakeFiles/Applied_Project.dir/LinkedList.cpp.obj: CXX_COMPILER__Applied_P
   OBJECT_DIR = CMakeFiles\Applied_Project.dir
   OBJECT_FILE_DIR = CMakeFiles\Applied_Project.dir
 
-build CMakeFiles/Applied_Project.dir/Astar.cpp.obj: CXX_COMPILER__Applied_Project_unscanned_Debug C$:/Users/Fawzy/Applied$ Project/Astar.cpp || cmake_object_order_depends_target_Applied_Project
-  DEP_FILE = CMakeFiles\Applied_Project.dir\Astar.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\Applied_Project.dir
-  OBJECT_FILE_DIR = CMakeFiles\Applied_Project.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Applied_Project
@@ -87,7 +81,7 @@ build CMakeFiles/Applied_Project.dir/Astar.cpp.obj: CXX_COMPILER__Applied_Projec
 #############################################
 # Link the executable Applied_Project.exe
 
-build Applied_Project.exe: CXX_EXECUTABLE_LINKER__Applied_Project_Debug CMakeFiles/Applied_Project.dir/main.cpp.obj CMakeFiles/Applied_Project.dir/graph.cpp.obj CMakeFiles/Applied_Project.dir/Trie.cpp.obj CMakeFiles/Applied_Project.dir/LinkedList.cpp.obj CMakeFiles/Applied_Project.dir/Astar.cpp.obj
+build Applied_Project.exe: CXX_EXECUTABLE_LINKER__Applied_Project_Debug CMakeFiles/Applied_Project.dir/main.cpp.obj CMakeFiles/Applied_Project.dir/graph.cpp.obj CMakeFiles/Applied_Project.dir/Trie.cpp.obj CMakeFiles/Applied_Project.dir/LinkedList.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Applied_Project.dir

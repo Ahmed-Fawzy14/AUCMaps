@@ -10,6 +10,5 @@ add_executable(Applied_Project main.cpp
         Trie.cpp
         LinkedList.h
         LinkedList.cpp
-        AStar.h
-        Astar.cpp
+        Astar.h
 )

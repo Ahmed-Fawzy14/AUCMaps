@@ -13,6 +13,7 @@
 #include <algorithm>
 #include "Trie.h"
 #include "LinkedList.h"
+#include <unordered_map>
 using namespace std;
 
 class Graph{
@@ -49,25 +50,12 @@ public:
         }
     };
 
-    Node test01;
+    unordered_map<string, int> nodeToIndexMap;
 
-    struct NodeData{
-        Trie t;
-        int weight;
-
-        NodeData(){
-
-        };
-
-        NodeData(Trie t, int weight){
-            this->t = t;
-            this->weight = weight;
-        }
-    };
 
     //Adj List
     int size; //number of buildings
-    vector<vector<Node> > adjList;
+    vector<vector<Node>> adjList;
 
 
 
@@ -110,8 +98,9 @@ public:
     //Trie needs to be sent from main function
 
 
+    void print();
 
-
+    void addNodeToIndexMapping(const std::string& nodeName, Buildings index);
 
     ~Graph();
 
