@@ -117,7 +117,7 @@ int main() {
 //   Graph p(100); // Assuming 7 nodes in the graph
   //   g.createGraph(Graph::SSE); // Customize with your starting node
 
-    Graph::Buildings startNode = Graph::BruceLLudwigFamilySquare; // Customize with your starting node
+    Graph::Buildings startNode = Graph::HatemRoof; // Customize with your starting node
  //   Graph::Buildings endNode = Graph::SocialResearchCenter;   // Customize with your ending node
 
    // int shortestDistance = g.findShortestDistance(startNode, endNode, g);

@@ -1,11 +1,9 @@
 # ninja log v5
 18	1637	7228045369016162	CMakeFiles/Applied_Project.dir/Astar.cpp.obj	2c03438117f7ebfc
-6	1385	7229026866157366	CMakeFiles/Applied_Project.dir/main.cpp.obj	c6f48d098157deab
-1385	1780	7229026870129615	Applied_Project.exe	bf69a6c3b5b30b5d
+4	3858	7229368540968716	CMakeFiles/Applied_Project.dir/main.cpp.obj	c6f48d098157deab
+3859	4607	7229368548620185	Applied_Project.exe	bf69a6c3b5b30b5d
 28	216	7218196800124679	CMakeFiles/Applied_Project.dir/Trie.cpp.obj	554c1607475cbd65
 21	168	7218196799537341	CMakeFiles/Applied_Project.dir/LinkedList.cpp.obj	53bfa03fa0ed9842
 13	1291	7229026865275754	CMakeFiles/Applied_Project.dir/graph.cpp.obj	43f83db13f7c7eee
 17	1229	7228168564368113	CMakeFiles/Applied_Project.dir/AstarAlog.cpp.obj	52e09a674b15e923
-0	134	7228169710749451	build.ninja	cabc56d60cb49efe
-4	1400	7229027333700668	CMakeFiles/Applied_Project.dir/main.cpp.obj	c6f48d098157deab
-1400	1656	7229027336227872	Applied_Project.exe	bf69a6c3b5b30b5d
+0	134	7230480877851793	build.ninja	cabc56d60cb49efe
