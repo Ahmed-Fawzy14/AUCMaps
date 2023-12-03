@@ -13,10 +13,10 @@
 #include <algorithm>
 #include <limits>
 #include <queue>
-
 #include "Trie.h"
 #include "LinkedList.h"
 #include <unordered_map>
+#include <map>
 using namespace std;
 
 class Graph{
@@ -94,6 +94,9 @@ public:
     vector<vector<Node> > getAdjlist();
 
     int findNodeIndex(const string& nodeName);
+    map<int, string> indexToNodeMap;
+
+    void printPath(int startNode, int endNode, const vector<int>& pred);
 
     //need a funciton to initalize all nodes
     //give the node its name

@@ -117,10 +117,20 @@ int main() {
 //   Graph p(100); // Assuming 7 nodes in the graph
   //   g.createGraph(Graph::SSE); // Customize with your starting node
 
-    Graph::Buildings startNode = Graph::HatemRoof; // Customize with your starting node
+    Graph::Buildings startNode = Graph::BruceLLudwigFamilySquare;
  //   Graph::Buildings endNode = Graph::SocialResearchCenter;   // Customize with your ending node
 
    // int shortestDistance = g.findShortestDistance(startNode, endNode, g);
+   //working but small but when using start as HatemRoof it acts as if OmarMohsen
+   //if you subtract 2 it acts as HatemRoof normally check whats up
+   //same thing with OmarMohes as start it goes to +2 Omar
+   //at some point a +2 must be happening becuase this does not happen for bruce
+   //Gate3 not showing up, probably same error
+
+
+
+
+
     g.dijkstra(startNode);
 
     cout<<g.findNodeIndex("Jameel");

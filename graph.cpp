@@ -5,6 +5,7 @@
 
 #include "graphHeader.h"
 #include <queue>
+#include <unordered_map>
 
 
 Graph::Graph(int size) {
@@ -154,11 +155,23 @@ void Graph::createGraph(Buildings ind) {
 }
 
 
-
+void Graph::printPath(int startNode, int endNode, const vector<int>& pred) {
+    if (endNode == startNode) {
+        cout << indexToNodeMap[startNode];
+        return;
+    }
+    if (pred[endNode] == -1) {
+        cout << "No path from " << indexToNodeMap[startNode] << " to " << indexToNodeMap[endNode] << endl;
+        return;
+    }
+    printPath(startNode, pred[endNode], pred);
+    cout << " -> " << indexToNodeMap[endNode];
+}
 
 void Graph::dijkstra(int startNode) {
     vector<int> dist(size, INT_MAX); // Distance of all nodes from startNode
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+    vector<int> pred(size, -1);
 
     dist[startNode] = 0;
     pq.push(make_pair(0, startNode)); // (distance, node)
@@ -186,38 +199,58 @@ void Graph::dijkstra(int startNode) {
             int nodeIndex = nodeToIndexMap[adjNode.name]; // Find the index of the adjacent node
             int nodeDistance = distance + adjNode.weight;
 
+            if(nodeIndex == 0){cout<<"LOOK HERE: "<<adjNode.name <<endl;}
+
             cout << "Checking adjacent node " << adjNode.name << " (Index: " << nodeIndex << ") with edge weight " << adjNode.weight << endl;
 
             // Check if a shorter path is found
             if (nodeDistance < dist[nodeIndex]) {
                 dist[nodeIndex] = nodeDistance;
+                pred[nodeIndex] = currentNode; // Update predecessor
                 pq.push(make_pair(nodeDistance, nodeIndex));
                 cout << "Updating distance of node " << adjNode.name << " to " << nodeDistance << endl;
             }
         }
+
     }
 
-    // Print or process the shortest distances
+
     for (int i = 0; i < size; i++) {
-        if(dist[i] == INT_MAX){
-
+        if (dist[i] != INT_MAX && i != startNode) {
+            cout << "Path from " << indexToNodeMap[startNode] << " to " << indexToNodeMap[i] << ": ";
+            printPath(startNode, i, pred);
+            cout << endl;
+            cout << "Shortest distance to node " << indexToNodeMap[i] << " is " << dist[i] << endl;
         }
-        else
-            cout << "Shortest distance to node " << i << " is " << dist[i] << endl;
     }
+
+
 }
 
 
 
 void Graph::buildNodeToIndexMap() {
     nodeToIndexMap.clear();
+    indexToNodeMap.clear();
 
     // Assuming that each node appears once in the adjacency list
     // and its index is determined by its position in this list
     for (int i = 0; i < 64; ++i) {
+
         // The first node in each list represents the node for that index
         string nodeName = adjList[i][0].name; // Assuming the first node in each list is the node itself
-        nodeToIndexMap[nodeName] = i;
+        if (nodeToIndexMap.find(nodeName) == nodeToIndexMap.end()) {
+            // If it's not in the map, add it
+            nodeToIndexMap[nodeName] = i;
+            indexToNodeMap[i] = nodeName; // Reverse mapping
+        } else {
+            // Handle the case where the node already exists in the map, if necessary
+            // For example, you might want to print an error message or update the value
+        }
+
+        //More than one at index 0
+
+
     }
 
 
