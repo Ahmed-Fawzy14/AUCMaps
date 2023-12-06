@@ -11,7 +11,11 @@ Trie::Trie()
 
 }
 
+<<<<<<< Updated upstream
 void Trie:: insert(string room, string location, string t)
+=======
+void Trie:: insert(string room, string location, string t) const
+>>>>>>> Stashed changes
 {
     trieNode* n=root;
 
@@ -29,18 +33,27 @@ void Trie:: insert(string room, string location, string t)
     n->type=t;
 }
 
+<<<<<<< Updated upstream
 bool Trie:: search(string room)
+=======
+bool Trie:: search(const string room, trieNode*&pointer) const
+>>>>>>> Stashed changes
 {
     trieNode* n=root;
 
     for (int i = 0; i < room.length(); i++)
     {
+<<<<<<< Updated upstream
          char c=room[i];
+=======
+        char c=room[i];
+>>>>>>> Stashed changes
         if (!n->children[c])
             return false;
 
         n = n->children[c];
     }
+<<<<<<< Updated upstream
 
     return n->word;
 }
@@ -48,6 +61,15 @@ bool Trie:: search(string room)
 string Trie::loc(string room)
 {
    trieNode* m = root;
+=======
+pointer=n;
+    return n->word;
+}
+/*
+string Trie::loc(string room)
+{
+    trieNode* m = root;
+>>>>>>> Stashed changes
 
     for (int i = 0; i < room.length(); i++)
     {
@@ -64,7 +86,11 @@ string Trie::loc(string room)
         return "Nothing found";
 }
 
+<<<<<<< Updated upstream
 string Trie::model(string room)
+=======
+/*string Trie::model(string room)
+>>>>>>> Stashed changes
 {
     trieNode* m = root;
 
@@ -81,9 +107,13 @@ string Trie::model(string room)
         return m->type;
     else
         return "Nothing found";
+<<<<<<< Updated upstream
 }
 
 
+=======
+} */
+>>>>>>> Stashed changes
 
 
 

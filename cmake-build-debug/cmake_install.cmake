@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 # Install script for directory: C:/Users/malek/OneDrive/Desktop/AUC Fall 2023/Data Structure/Project/Applied-Project
+=======
+# Install script for directory: C:/Users/malek/OneDrive/Desktop/AUC Fall 2023/Data Structure/Project/b/Applied-Project
+>>>>>>> Stashed changes
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +49,9 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
+<<<<<<< Updated upstream
 file(WRITE "C:/Users/malek/OneDrive/Desktop/AUC Fall 2023/Data Structure/Project/Applied-Project/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+=======
+file(WRITE "C:/Users/malek/OneDrive/Desktop/AUC Fall 2023/Data Structure/Project/b/Applied-Project/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+>>>>>>> Stashed changes
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

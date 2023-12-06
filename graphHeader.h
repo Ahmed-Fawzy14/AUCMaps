@@ -66,7 +66,30 @@ public:
 
     Graph(int size);
 
+<<<<<<< Updated upstream
     void createGraph();
+=======
+    //reads a line and tell you how many elements are in it
+    // then use this for the while loop (or a for loop)
+    //commas +1
+    void getLoop(int commaCount[]);
+    void createGraph(Buildings ind);
+   // void createGraph1(Buildings ind, vector<string> s);
+    void insertInNode(string nodeName, vector<string> s, vector<string> t) const ;
+    bool searchClassroomInNode(string nodeName, const std::string& classroom) const;
+    vector<string>  readFile(string &theFile);
+
+    string createSub(int &index, string &theFile, Buildings ind);
+    void dijkstra(int startNode, vector<string>& p, string endNode, int &x);
+
+    vector<vector<Node> > getAdjlist();
+
+    int intNodeIndex(string nodeName) const;
+    map<int, string> indexToNodeMap;
+
+    void printPath(int startNode, int endNode, const vector<int>& pred);
+    void getPath(int startNode, int endNode, const vector<int>& pred, vector<string>& p);
+>>>>>>> Stashed changes
 
     //need a funciton to initalize all nodes
     //give the node its name

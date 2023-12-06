@@ -8,10 +8,17 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+<<<<<<< Updated upstream
   "C:/Users/malek/OneDrive/Desktop/AUC Fall 2023/Data Structure/Project/Applied-Project/LinkedList.cpp" "CMakeFiles/Applied_Project.dir/LinkedList.cpp.obj" "gcc" "CMakeFiles/Applied_Project.dir/LinkedList.cpp.obj.d"
   "C:/Users/malek/OneDrive/Desktop/AUC Fall 2023/Data Structure/Project/Applied-Project/Trie.cpp" "CMakeFiles/Applied_Project.dir/Trie.cpp.obj" "gcc" "CMakeFiles/Applied_Project.dir/Trie.cpp.obj.d"
   "C:/Users/malek/OneDrive/Desktop/AUC Fall 2023/Data Structure/Project/Applied-Project/graph.cpp" "CMakeFiles/Applied_Project.dir/graph.cpp.obj" "gcc" "CMakeFiles/Applied_Project.dir/graph.cpp.obj.d"
   "C:/Users/malek/OneDrive/Desktop/AUC Fall 2023/Data Structure/Project/Applied-Project/main.cpp" "CMakeFiles/Applied_Project.dir/main.cpp.obj" "gcc" "CMakeFiles/Applied_Project.dir/main.cpp.obj.d"
+=======
+  "C:/Users/malek/OneDrive/Desktop/AUC Fall 2023/Data Structure/Project/b/Applied-Project/LinkedList.cpp" "CMakeFiles/Applied_Project.dir/LinkedList.cpp.obj" "gcc" "CMakeFiles/Applied_Project.dir/LinkedList.cpp.obj.d"
+  "C:/Users/malek/OneDrive/Desktop/AUC Fall 2023/Data Structure/Project/b/Applied-Project/Trie.cpp" "CMakeFiles/Applied_Project.dir/Trie.cpp.obj" "gcc" "CMakeFiles/Applied_Project.dir/Trie.cpp.obj.d"
+  "C:/Users/malek/OneDrive/Desktop/AUC Fall 2023/Data Structure/Project/b/Applied-Project/graph.cpp" "CMakeFiles/Applied_Project.dir/graph.cpp.obj" "gcc" "CMakeFiles/Applied_Project.dir/graph.cpp.obj.d"
+  "C:/Users/malek/OneDrive/Desktop/AUC Fall 2023/Data Structure/Project/b/Applied-Project/main.cpp" "CMakeFiles/Applied_Project.dir/main.cpp.obj" "gcc" "CMakeFiles/Applied_Project.dir/main.cpp.obj.d"
+>>>>>>> Stashed changes
   )
 
 # Targets to which this target links which contain Fortran sources.

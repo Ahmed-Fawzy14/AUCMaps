@@ -1,5 +1,9 @@
 CMakeFiles/Applied_Project.dir/Trie.cpp.obj: \
+<<<<<<< Updated upstream
  C:\Users\malek\OneDrive\Desktop\AUC\ Fall\ 2023\Data\ Structure\Project\Applied-Project\Trie.cpp \
+=======
+ C:\Users\malek\OneDrive\Desktop\AUC\ Fall\ 2023\Data\ Structure\Project\b\Applied-Project\Trie.cpp \
+>>>>>>> Stashed changes
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -142,7 +146,11 @@ CMakeFiles/Applied_Project.dir/Trie.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
+<<<<<<< Updated upstream
  C:\Users\malek\OneDrive\Desktop\AUC\ Fall\ 2023\Data\ Structure\Project\Applied-Project\Trie.h \
+=======
+ C:\Users\malek\OneDrive\Desktop\AUC\ Fall\ 2023\Data\ Structure\Project\b\Applied-Project\Trie.h \
+>>>>>>> Stashed changes
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/vector \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_uninitialized.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
