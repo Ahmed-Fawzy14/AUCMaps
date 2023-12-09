@@ -54,6 +54,7 @@ public:
     };
 
     unordered_map<string, int> nodeToIndexMap;
+    int intNodeIndex(string nodeName) const;
 
 
     //Adj List
@@ -87,6 +88,11 @@ public:
     void createGraph(Buildings ind);
 
     vector<string>  readFile(string &theFile);
+    void getPath(int startNode, int endNode, const vector<int>& pred, vector<string>& p);
+
+    void insertInNode(string nodeName, vector<string> s, vector<string> t) const ;
+    bool searchClassroomInNode(string nodeName, const std::string& classroom) const;
+    void dijkstra(int startNode, vector<string>& p, string endNode, int &x);
 
     string createSub(int &index, string &theFile, Buildings ind);
     void dijkstra(int startNode);
