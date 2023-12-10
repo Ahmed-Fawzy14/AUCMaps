@@ -1,11 +1,6 @@
 CMakeFiles/Applied_Project.dir/graph.cpp.obj: \
-<<<<<<< Updated upstream
- C:\Users\malek\OneDrive\Desktop\AUC\ Fall\ 2023\Data\ Structure\Project\Applied-Project\graph.cpp \
- C:\Users\malek\OneDrive\Desktop\AUC\ Fall\ 2023\Data\ Structure\Project\Applied-Project\graphHeader.h \
-=======
  C:\Users\malek\OneDrive\Desktop\AUC\ Fall\ 2023\Data\ Structure\Project\b\Applied-Project\graph.cpp \
  C:\Users\malek\OneDrive\Desktop\AUC\ Fall\ 2023\Data\ Structure\Project\b\Applied-Project\graphHeader.h \
->>>>>>> Stashed changes
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -153,9 +148,6 @@ CMakeFiles/Applied_Project.dir/graph.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
-<<<<<<< Updated upstream
- C:\Users\malek\OneDrive\Desktop\AUC\ Fall\ 2023\Data\ Structure\Project\Applied-Project\Trie.h \
-=======
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/codecvt.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
@@ -178,7 +170,6 @@ CMakeFiles/Applied_Project.dir/graph.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/deque.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_queue.h \
  C:\Users\malek\OneDrive\Desktop\AUC\ Fall\ 2023\Data\ Structure\Project\b\Applied-Project\Trie.h \
->>>>>>> Stashed changes
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_map \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_map.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hashtable.h \
@@ -187,12 +178,8 @@ CMakeFiles/Applied_Project.dir/graph.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/enable_special_members.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/node_handle.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/erase_if.h \
-<<<<<<< Updated upstream
- C:\Users\malek\OneDrive\Desktop\AUC\ Fall\ 2023\Data\ Structure\Project\Applied-Project\LinkedList.h
-=======
  C:\Users\malek\OneDrive\Desktop\AUC\ Fall\ 2023\Data\ Structure\Project\b\Applied-Project\LinkedList.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/map \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tree.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_map.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multimap.h
->>>>>>> Stashed changes

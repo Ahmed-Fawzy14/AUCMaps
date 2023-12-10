@@ -8,24 +8,38 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <fstream>
+#include <sstream>
+#include <algorithm>
+#include <limits>
+#include <queue>
 #include "Trie.h"
 #include "LinkedList.h"
+#include <unordered_map>
+#include <map>
 using namespace std;
 
 class Graph{
 
-private:
+public:
 
-    enum Buildings {
-    Jameel, SSE,
-
-    };
 
     struct Node{
 
         string name;
         Trie trie;
         int weight;
+
+
+        bool operator==(const Node& other) const {
+            return 1/* condition for equality */;
+
+        }
+
+        bool operator!=(const Node& other) const {
+            return !(*this == other);
+        }
+
 
         Node(){
 
@@ -39,19 +53,9 @@ private:
         }
     };
 
-    struct NodeData{
-        Trie t;
-        int weight;
+    unordered_map<string, int> nodeToIndexMap;
+    int intNodeIndex(string nodeName) const;
 
-        NodeData(){
-
-        };
-
-        NodeData(Trie t, int weight){
-            this->t = t;
-            this->weight = weight;
-        }
-    };
 
     //Adj List
     int size; //number of buildings
@@ -59,37 +63,46 @@ private:
 
 
 
-public:
+
+    enum Buildings {
+        BruceLLudwigFamilySquare, DrHamzaAlKohliInformationCentre, Gate1, AllamAmphitheatre, SchoolOfContinuingEducation, AUCPortal,AUCCenterForArts,Jameel, JameelFirstFloor, JameelSecondFloor, BusGate, SSE, SSEFirstFloor, SSESecondFloor, SSERoof, SSEPlaza, Hatem, HatemFirstFloor, HatemSecondFloor, HatemThird, HatemRoof, Quick, OmarMohsen, Waleed, WaleedFirstFloor, WaleedSecondFloor,ArtFF,TabaliPlaza,ArtsGate,Gate5,SocialResearchCenter,WatsonHouse,LinkPlaza,Administration,AdministrationGarden,AdministrationFirstFloor,AdministrationSecondFloor,WestGarden,BarlettPlaza,Library,LibraryGarden,LibraryFirstFloor,LibrarySecondFloor,LibraryThirdFloor,CVC,CampusCenter,EastGarden,NorthGarden,GardensGate,Gate2,AUCResid,AUCResidFF,AUCResidSS,SportsPlaza,EastEntrance,SportsComplex,PepsiGate,Gate4,ArnoldPavillion,SportGate,IndoorSports,SportsFF,ComplexPool,ComplexOutdoor,Gate3
+
+    };
+
+    Buildings usethis;
 
 
+
+    vector<vector<Node>> test;
+
+    void buildNodeToIndexMap();
+    unordered_map<int, string> buildIndexToNodeMap();
     Graph();
 
     Graph(int size);
 
-<<<<<<< Updated upstream
-    void createGraph();
-=======
     //reads a line and tell you how many elements are in it
     // then use this for the while loop (or a for loop)
     //commas +1
     void getLoop(int commaCount[]);
     void createGraph(Buildings ind);
-   // void createGraph1(Buildings ind, vector<string> s);
+
+    vector<string>  readFile(string &theFile);
+    void getPath(int startNode, int endNode, const vector<int>& pred, vector<string>& p);
+
     void insertInNode(string nodeName, vector<string> s, vector<string> t) const ;
     bool searchClassroomInNode(string nodeName, const std::string& classroom) const;
-    vector<string>  readFile(string &theFile);
+    int dijkstra(int startNode, vector<string>& p, string endNode);
 
     string createSub(int &index, string &theFile, Buildings ind);
-    void dijkstra(int startNode, vector<string>& p, string endNode, int &x);
+   // void dijkstra(int startNode);
 
     vector<vector<Node> > getAdjlist();
 
-    int intNodeIndex(string nodeName) const;
+    int findNodeIndex(const string& nodeName);
     map<int, string> indexToNodeMap;
 
     void printPath(int startNode, int endNode, const vector<int>& pred);
-    void getPath(int startNode, int endNode, const vector<int>& pred, vector<string>& p);
->>>>>>> Stashed changes
 
     //need a funciton to initalize all nodes
     //give the node its name
@@ -100,8 +113,9 @@ public:
     //Trie needs to be sent from main function
 
 
+    void print();
 
-
+    void addNodeToIndexMapping(const std::string& nodeName, Buildings index);
 
     ~Graph();
 

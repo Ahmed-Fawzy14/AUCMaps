@@ -4,62 +4,96 @@
 
 
 #include "graphHeader.h"
-<<<<<<< Updated upstream
-
-=======
 #include <queue>
 #include <unordered_map>
-using namespace std;
->>>>>>> Stashed changes
+
 
 Graph::Graph(int size) {
 
     //Initialize Adj List
     this->size = size;
-//    adjList = new LinkedList<Node>[size];
+    adjList.resize(size);
+
 
 }
 
-void Graph::createGraph() {
 
-    for(int i = 0; i<size; i++)
+vector<string> Graph::readFile(string &theFile) {
+
+    string ret;
+    vector<string> str;
+    str.resize(size);
+    string line;
+    ifstream file("Data.txt");
+    int i =0;
+    if(!file.is_open())
     {
-        string name;
-        int weight;
-        Trie t;
-        Node p;
-
-        while(0)//not end of line
+        cerr<<"File is not open"<<endl;
+    }
+    else
+    {
+        while(getline(file, line))
         {
-            p.name = ""; //read from file
-            p.weight = 0; //read from file
-            p.trie= t;
-            adjList[i].push_back(p);
-
-<<<<<<< Updated upstream
-=======
+            str[i] += line + '\n';
             i++;
-
         }
-        //read from file
-        p->trie = t;
-        p->weight = stoi(number);
-        //test number of loops
-        j++;
-        adjList[ind].push_back(*p);
-        // addNodeToIndexMapping(p->name,ind);
-        //nodeToIndexMap[p->name] = j;
-        //  cout<<"nodeToIndex: "<<nodeToIndexMap[p->name]<<" j: "<<j<<endl;
+
     }
 
+    file.close();
 
+    //theFile = ret;
 
-
+    return str;
 
 }
 
-/*void Graph::createGraph1(Buildings ind, vector<string> s)
-{
+
+//vector<string> s (each index is one line)
+//s[ind]
+
+
+//read file in creatEGraph and send it
+string Graph::createSub(int &index, string &theFile, Buildings ind) {
+    vector<string> ret = readFile(theFile);
+    string s;
+    int i = index;
+    while(i < ret[ind].length() && (ret[ind])[i] != ',') {
+        s += (ret[ind])[i];
+        i++;
+    }
+
+    if (i == ret[ind].length()) {
+        index = 0;
+    } else {
+        index = i + 1;
+    }
+
+    return s;
+}
+
+
+
+void Graph::getLoop(int commaCount[]) {
+    ifstream file("Data.txt");
+    string line;
+    int i = 0;
+
+    if (file.is_open()) {
+        while(getline(file, line)) {
+            commaCount[i] = count(line.begin(), line.end(), ',');
+            i++;
+        }
+        file.close();
+    } else {
+        cerr << "Unable to open file" << endl;
+    }
+
+}
+
+
+
+void Graph::createGraph(Buildings ind) {
     ifstream file("Data.txt");
     string line;
     string theFile;
@@ -83,16 +117,19 @@ void Graph::createGraph() {
         //index of substring to get name and weight seperatly
         int i = 0;
         string sub = createSub(index, theFile, ind);
-        string number = {};
-        int weight = 0;
+        string number= {};
+        int weight =0;
         Trie t;
         Node *p = new Node;
-        while (sub[i] != ' ') {
+        while(sub[i] != ' ')
+        {
             p->name += sub[i];
             i++;
         }
-        while (sub[i] != '\0') {
-            if (sub[i] != ' ') {
+        while(sub[i] != '\0')
+        {
+            if(sub[i]!= ' ')
+            {
                 number += sub[i];
                 //then change weight to be an int in the struct and then we can do stoi
             }
@@ -102,90 +139,20 @@ void Graph::createGraph() {
         }
         //read from file
         p->trie = t;
-        for (const std::string &word: s) {
-            p->trie.insert(word, "hi", "hi");
-            p->weight = stoi(number);
-            //test number of loops
-            j++;
-            adjList[ind].push_back(*p);
-            // addNodeToIndexMapping(p->name,ind);
-            //nodeToIndexMap[p->name] = j;
-            //  cout<<"nodeToIndex: "<<nodeToIndexMap[p->name]<<" j: "<<j<<endl;
-        }
-
-
+        p->weight = stoi(number);
+        //test number of loops
+        j++;
+        adjList[ind].push_back(*p);
+        // addNodeToIndexMapping(p->name,ind);
+        //nodeToIndexMap[p->name] = j;
+        //  cout<<"nodeToIndex: "<<nodeToIndexMap[p->name]<<" j: "<<j<<endl;
     }
+
+
+
+
+
 }
-*/
-void Graph::insertInNode(string f, vector<string> s, vector<string> t) const {
-    int x = intNodeIndex(f);
-
-    if (x != -1) {
-
-        for (int i = 0; i < s.size() && i < t.size(); i++)
-            adjList[x][0].trie.insert(s[i], adjList[x][0].name, t[i]);
-
-
-
-    } else {
-        return;
-    }
-}
-
-
-bool Graph::searchClassroomInNode(string nodeName, const std::string& classroom) const {
-
-    int x = intNodeIndex(nodeName);
-    trieNode* p = NULL;
-
-    if (x!=-1)
-    {
-        bool classroomFound = adjList[x][0].trie.search(classroom, p);
-        if (classroomFound)
-        {
-            cout<<"Classroom '"<<classroom<<" found in node "<<nodeName<<" and its type is "<<p->type<<endl;
-            return true;
-        } else
-        {
-            x = intNodeIndex(nodeName + "FirstFloor");
-            classroomFound = adjList[x][0].trie.search(classroom, p);
-            if (classroomFound)
-            {
-                string m="";
-                m=nodeName + "FirstFloor";
-                cout<<"Classroom '"<<classroom<<" found in node "<<m<<" and its type is "<<p->type<<endl;
-                return true;
-            } else
-            {
-                x = intNodeIndex(nodeName + "SecondFloor");
-                classroomFound = adjList[x][0].trie.search(classroom, p);
-                if (classroomFound)
-                {
-                    string k="";
-                    k=nodeName + "SecondFloor";
-                    cout<<"Classroom '"<<classroom<<" found in node "<<k<<" and its type is "<<p->type<<endl;
-                    return true;
-                } else
-                {
-                    x = intNodeIndex(nodeName + "ThirdFloor");
-                    classroomFound = adjList[x][0].trie.search(classroom, p);
-                    if (classroomFound)
-                    {
-                        string n="";
-                        n=nodeName + "ThirdFloor";
-                        cout<<"Classroom '"<<classroom<<" found in node "<<n<<" and its type is "<<p->type<<endl;
-                        return true;
-                    }
-                }
-            }
-        }
-    }
-    cout << "Node " << nodeName << " not found" << endl;
-    return false;
-}
-
-
-
 
 
 void Graph::printPath(int startNode, int endNode, const vector<int>& pred) {
@@ -201,6 +168,7 @@ void Graph::printPath(int startNode, int endNode, const vector<int>& pred) {
     cout << " -> " << indexToNodeMap[endNode];
 }
 
+
 void Graph::getPath(int startNode, int endNode, const vector<int>& pred, vector<string>& p)
 {
     if (endNode == startNode)
@@ -215,7 +183,9 @@ void Graph::getPath(int startNode, int endNode, const vector<int>& pred, vector<
     p.push_back(indexToNodeMap[endNode]);
 }
 
-void Graph::dijkstra(int startNode, vector<string>& p, string endNode, int &x) {
+//x is shortest distance
+int Graph::dijkstra(int startNode, vector<string>& p, string endNode) {
+    int x=0;
     vector<int> dist(size, INT_MAX); // Distance of all nodes from startNode
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
     vector<int> pred(size, -1);
@@ -246,41 +216,111 @@ void Graph::dijkstra(int startNode, vector<string>& p, string endNode, int &x) {
             int nodeIndex = nodeToIndexMap[adjNode.name]; // Find the index of the adjacent node
             int nodeDistance = distance + adjNode.weight;
 
-            if(nodeIndex == 0){cout<<"LOOK HERE: "<<adjNode.name <<endl;}
+           // if(nodeIndex == 0){cout<<"LOOK HERE: "<<adjNode.name <<endl;}
 
-           // cout << "Checking adjacent node " << adjNode.name << " (Index: " << nodeIndex << ") with edge weight " << adjNode.weight << endl;
+            // cout << "Checking adjacent node " << adjNode.name << " (Index: " << nodeIndex << ") with edge weight " << adjNode.weight << endl;
 
             // Check if a shorter path is found
             if (nodeDistance < dist[nodeIndex]) {
                 dist[nodeIndex] = nodeDistance;
                 pred[nodeIndex] = currentNode; // Update predecessor
                 pq.push(make_pair(nodeDistance, nodeIndex));
-              //  cout << "Updating distance of node " << adjNode.name << " to " << nodeDistance << endl;
+                //  cout << "Updating distance of node " << adjNode.name << " to " << nodeDistance << endl;
             }
->>>>>>> Stashed changes
+        }
+
+    }
+    // for (int i = 0; i < size; i++) {
+    //  if (dist[i] != INT_MAX && i != startNode) {
+    //cout << "Path from " << indexToNodeMap[startNode] << " to " << indexToNodeMap[i] << ": ";
+    getPath(startNode, intNodeIndex(endNode), pred, p);
+    x=dist[intNodeIndex(endNode)];
+    return x;
+    //  p.push_back(endNode);
+    // cout << endl;
+    // cout << "Shortest distance to node " << indexToNodeMap[i] << " is " << dist[i] << endl;
+    //  }
+    // }
+
+}
+
+
+
+
+
+/*
+void Graph::dijkstra(int startNode) {
+    vector<int> dist(size, INT_MAX); // Distance of all nodes from startNode
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+    vector<int> pred(size, -1);
+
+    dist[startNode] = 0;
+    pq.push(make_pair(0, startNode)); // (distance, node)
+
+    cout << "Starting Dijkstra's algorithm from node " << startNode << endl;
+
+    while (!pq.empty()) {
+        int distance = pq.top().first;
+        int currentNode = pq.top().second;
+        pq.pop();
+
+        cout << "Visiting node " << currentNode << " with distance " << distance << endl;
+
+        // Skip the first node in the adjacency list if it represents a self-link
+        bool isFirstNode = true;
+
+        // Iterate through all the adjacent nodes of currentNode
+        for (auto& adjNode : adjList[currentNode]) {
+            // Skip if it's the first node and a self-link
+            if (isFirstNode) {
+                isFirstNode = false;
+                continue;
+            }
+
+            int nodeIndex = nodeToIndexMap[adjNode.name]; // Find the index of the adjacent node
+            int nodeDistance = distance + adjNode.weight;
+
+            if(nodeIndex == 0){cout<<"LOOK HERE: "<<adjNode.name <<endl;}
+
+            cout << "Checking adjacent node " << adjNode.name << " (Index: " << nodeIndex << ") with edge weight " << adjNode.weight << endl;
+
+            // Check if a shorter path is found
+            if (nodeDistance < dist[nodeIndex]) {
+                dist[nodeIndex] = nodeDistance;
+                pred[nodeIndex] = currentNode; // Update predecessor
+                pq.push(make_pair(nodeDistance, nodeIndex));
+                cout << "Updating distance of node " << adjNode.name << " to " << nodeDistance << endl;
+            }
         }
 
     }
 
-<<<<<<< Updated upstream
-}
+/*
+    for (int i = 0; i < size; i++) {
+        if (dist[i] != INT_MAX && i != startNode) {
+            cout << "Path from " << indexToNodeMap[startNode] << " to " << indexToNodeMap[i] << ": ";
+            printPath(startNode, i, pred);
+            cout << endl;
+            cout << "Shortest distance to node " << indexToNodeMap[i] << " is " << dist[i] << endl;
+        }
 
-=======
 
-   // for (int i = 0; i < size; i++) {
-      //  if (dist[i] != INT_MAX && i != startNode) {
-            //cout << "Path from " << indexToNodeMap[startNode] << " to " << indexToNodeMap[i] << ": ";
-            getPath(startNode, intNodeIndex(endNode), pred, p);
-            x=dist[intNodeIndex(endNode)];
-  //  p.push_back(endNode);
-           // cout << endl;
-           // cout << "Shortest distance to node " << indexToNodeMap[i] << " is " << dist[i] << endl;
-      //  }
-   // }
 
 
 }
+*/
 
+int Graph::intNodeIndex(string nodeName) const{
+    auto it = nodeToIndexMap.find(nodeName);
+
+    if (it != nodeToIndexMap.end()) {
+        // Node found, return its index
+        return it->second;
+    } else {
+        // Node not found, return an indicator (e.g., -1)
+        return -1;
+    }
+}
 
 
 void Graph::buildNodeToIndexMap() {
@@ -310,7 +350,7 @@ void Graph::buildNodeToIndexMap() {
 
 }
 
-int Graph::intNodeIndex(string nodeName) const{
+int Graph::findNodeIndex(const string& nodeName) {
     auto it = nodeToIndexMap.find(nodeName);
 
     if (it != nodeToIndexMap.end()) {
@@ -323,15 +363,80 @@ int Graph::intNodeIndex(string nodeName) const{
 }
 
 
-void printToIndex(Graph j)
-{
+//string of node name, //vector of all classrooms, vector of classroom types
+void Graph::insertInNode(string f, vector<string> s, vector<string> t) const {
+    int x = intNodeIndex(f);
 
-
-
-
+    if (x != -1) {
+        for (int i = 0; i < s.size() && i < t.size(); i++)
+            adjList[x][0].trie.insert(s[i], adjList[x][0].name, t[i]);
+    } else {
+        return;
+    }
 }
+bool Graph::searchClassroomInNode(string nodeName, const std::string& classroom) const {
 
+    int x = intNodeIndex(nodeName);
+    trieNode *p = NULL;
 
+    if (x != -1) {
+        bool classroomFound = adjList[x][0].trie.search(classroom, p);
+        if (classroomFound) {
+            cout << "Classroom '" << classroom << " found in building " << nodeName << " and it is a " << p->type
+                 << endl;
+            return true;
+        } else {
+            x = intNodeIndex(nodeName + "FirstFloor");
+            classroomFound = adjList[x][0].trie.search(classroom, p);
+            if (classroomFound) {
+                string m = "";
+                m = nodeName + "FirstFloor";
+                cout << "Classroom '" << classroom << " found in building " << m << " and it is a " << p->type << endl;
+                return true;
+            } else {
+                x = intNodeIndex(nodeName + "SecondFloor");
+                classroomFound = adjList[x][0].trie.search(classroom, p);
+                if (classroomFound) {
+                    string k = "";
+                    k = nodeName + "SecondFloor";
+                    cout << "Classroom '" << classroom << " found in building " << k << " and it is a " << p->type
+                         << endl;
+                    return true;
+                } else {
+                    x = intNodeIndex(nodeName + "ThirdFloor");
+                    if(x != -1){
+                        classroomFound = adjList[x][0].trie.search(classroom, p);
+                        if (classroomFound) {
+                            string n = "";
+                            n = nodeName + "ThirdFloor";
+                            cout << "Classroom '" << classroom << " found in building " << n << " and it is a " << p->type
+                                 << endl;
+                            return true;
+                        }
+                        else
+                        {
+
+                        }
+
+                    } else {
+                        x = intNodeIndex(nodeName + "Garden");
+                        classroomFound = adjList[x][0].trie.search(classroom, p);
+                        if (classroomFound) {
+                            string n = "";
+                            n = nodeName + "Garden";
+                            cout << "Classroom '" << classroom << " found in building " << n << " and it is a "
+                                 << p->type << endl;
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        cout << "Node " << nodeName << " not found" << endl;
+        return false;
+    }
+    return false;
+}
 
 vector<vector<typename Graph::Node>> Graph::getAdjlist() {
     return adjList;
@@ -357,19 +462,8 @@ void Graph::print(){
 }
 
 
->>>>>>> Stashed changes
 Graph::~Graph() {
 
 
 
-<<<<<<< Updated upstream
-
-
 }
-
-
-
-
-=======
-}
->>>>>>> Stashed changes

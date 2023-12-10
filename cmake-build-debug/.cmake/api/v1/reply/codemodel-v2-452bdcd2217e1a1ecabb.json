@@ -49,13 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-<<<<<<<< Updated upstream:cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-381dc557d9481772fda7.json
-		"build" : "C:/Users/malek/OneDrive/Desktop/AUC Fall 2023/Data Structure/Project/Applied-Project/cmake-build-debug",
-		"source" : "C:/Users/malek/OneDrive/Desktop/AUC Fall 2023/Data Structure/Project/Applied-Project"
-========
 		"build" : "C:/Users/malek/OneDrive/Desktop/AUC Fall 2023/Data Structure/Project/b/Applied-Project/cmake-build-debug",
 		"source" : "C:/Users/malek/OneDrive/Desktop/AUC Fall 2023/Data Structure/Project/b/Applied-Project"
->>>>>>>> Stashed changes:cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-e524cb27c990e7d90904.json
 	},
 	"version" : 
 	{

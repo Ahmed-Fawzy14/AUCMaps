@@ -56,17 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe"
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< Updated upstream
-CMAKE_SOURCE_DIR = "C:\Users\malek\OneDrive\Desktop\AUC Fall 2023\Data Structure\Project\Applied-Project"
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\malek\OneDrive\Desktop\AUC Fall 2023\Data Structure\Project\Applied-Project\cmake-build-debug"
-=======
 CMAKE_SOURCE_DIR = "C:\Users\malek\OneDrive\Desktop\AUC Fall 2023\Data Structure\Project\b\Applied-Project"
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = "C:\Users\malek\OneDrive\Desktop\AUC Fall 2023\Data Structure\Project\b\Applied-Project\cmake-build-debug"
->>>>>>> Stashed changes
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -93,15 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-<<<<<<< Updated upstream
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\malek\OneDrive\Desktop\AUC Fall 2023\Data Structure\Project\Applied-Project\cmake-build-debug\CMakeFiles" "C:\Users\malek\OneDrive\Desktop\AUC Fall 2023\Data Structure\Project\Applied-Project\cmake-build-debug\\CMakeFiles\progress.marks"
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\malek\OneDrive\Desktop\AUC Fall 2023\Data Structure\Project\Applied-Project\cmake-build-debug\CMakeFiles" 0
-=======
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\malek\OneDrive\Desktop\AUC Fall 2023\Data Structure\Project\b\Applied-Project\cmake-build-debug\CMakeFiles" "C:\Users\malek\OneDrive\Desktop\AUC Fall 2023\Data Structure\Project\b\Applied-Project\cmake-build-debug\\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\malek\OneDrive\Desktop\AUC Fall 2023\Data Structure\Project\b\Applied-Project\cmake-build-debug\CMakeFiles" 0
->>>>>>> Stashed changes
 .PHONY : all
 
 # The main clean target
