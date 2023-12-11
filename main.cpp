@@ -315,9 +315,9 @@ int main()
     int choice;
     cout << "Greetings!" << endl;
     cout << "How could we serve you today?" << endl;
-    cout << "Service 1: Search for a room in a building and recieve its details"
+    cout << "Service 1: Search for a room in a building and receive its details"
          << endl;
-    cout << "Service 2: Recieve the shortest path from one buidling to another "
+    cout << "Service 2: Receive the shortest path from one building to another "
          << endl;
     cout << "Service 3: Input the class and its building that you would like to visit and we will provide you with the shortest path "
          << endl;
@@ -325,6 +325,7 @@ int main()
 
     if (choice == 1)
     {
+        int check;
         string e;
         string n;
         string r;
@@ -333,13 +334,20 @@ int main()
         cin>>n;
         cout<<"Please enter the room name"<<endl;
         cin>>r;
-        g.searchClassroomInNode(n,r,e);
-        cout<<endl;
+       check= g.intNodeIndex(n);
+       if(check!=-1) {
+           g.searchClassroomInNode(n, r, e);
+           cout << endl;
 
-        cout << "Done! Thank you!" << endl;
+           cout << "Done! Thank you!" << endl;
+       }
+       else
+           cout<<"Wrong building name"<<endl;
     }
     else if (choice == 2)
     {
+        int check1;
+        int check2;
         string one;
         string two;
         vector<string> path;
@@ -347,21 +355,29 @@ int main()
         cin>>one;
         cout<<"Please enter building you want to go to"<<endl;
         cin>>two;
-        int d=g.dijkstra(g.intNodeIndex(one), path, two);
-        cout<<"Below we will provide you with the shortest path to your destination"<<endl;
-        for(int i=0;i<path.size();i++) {
-            if (i != path.size() - 1)
-                cout << path[i] << " ->" << " ";
-            else
-                cout << path[i];
+        check1= g.intNodeIndex(one);
+        check2=g.intNodeIndex(two);
+        if(check1!=-1 || check2!=-1) {
+            int d = g.dijkstra(g.intNodeIndex(one), path, two);
+            cout << "Below we will provide you with the shortest path to your destination" << endl;
+            for (int i = 0; i < path.size(); i++) {
+                if (i != path.size() - 1)
+                    cout << path[i] << " ->" << " ";
+                else
+                    cout << path[i];
+            }
+            cout << endl << "The total desitance is " << d << endl;
+
+
+            cout << "Done! Thank you!" << endl;
         }
-        cout<<endl<<"The total desitance is "<<d<<endl;
-
-
-        cout << "Done! Thank you!" << endl;
+        else
+            cout<<"Wrong building name"<<endl;
     }
 
     else if (choice == 3) {
+        int check1;
+        int check2;
         string one;
         string two;
         string three;
@@ -373,24 +389,28 @@ int main()
         cin>>two;
         cout<<"Please enter the class you are looking for in that building"<<endl;
         cin>>three;
-       if( g.searchClassroomInNode(two,three,endNode))
-       {
+        check1= g.intNodeIndex(one);
+        check2=g.intNodeIndex(two);
+        if(check1!=-1 || check2!=-1) {
+            if (g.searchClassroomInNode(two, three, endNode)) {
 
-           int d = g.dijkstra(g.intNodeIndex(one), path, endNode);
-           cout << "Below we will provide you with the shortest path to your destination" << endl;
-           for (int i = 0; i < path.size(); i++) {
-               if (i != path.size() - 1)
-                   cout << path[i] << " ->" << " ";
-               else
-                   cout << path[i];
-           }
+                int d = g.dijkstra(g.intNodeIndex(one), path, endNode);
+                cout << "Below we will provide you with the shortest path to your destination" << endl;
+                for (int i = 0; i < path.size(); i++) {
+                    if (i != path.size() - 1)
+                        cout << path[i] << " ->" << " ";
+                    else
+                        cout << path[i];
+                }
 
-           cout << endl << "The total desitance is " << d << endl;
-       }
-       else
-           cout<<"Room was not found in building"<<endl;
+                cout << endl << "The total desitance is " << d << endl;
+            } else
+                cout << "Room was not found in building" << endl;
 
-        cout << "Done! Thank you!" << endl;
+            cout << "Done! Thank you!" << endl;
+        }
+        else
+            cout<<"Wrong building name"<<endl;
     }
 
 
