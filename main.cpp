@@ -357,7 +357,7 @@ int main()
         cin>>two;
         check1= g.intNodeIndex(one);
         check2=g.intNodeIndex(two);
-        if(check1!=-1 || check2!=-1) {
+        if(check1!=-1 && check2!=-1) {
             int d = g.dijkstra(g.intNodeIndex(one), path, two);
             cout << "Below we will provide you with the shortest path to your destination" << endl;
             for (int i = 0; i < path.size(); i++) {
@@ -391,7 +391,7 @@ int main()
         cin>>three;
         check1= g.intNodeIndex(one);
         check2=g.intNodeIndex(two);
-        if(check1!=-1 || check2!=-1) {
+        if(check1!=-1 && check2!=-1) {
             if (g.searchClassroomInNode(two, three, endNode)) {
 
                 int d = g.dijkstra(g.intNodeIndex(one), path, endNode);
