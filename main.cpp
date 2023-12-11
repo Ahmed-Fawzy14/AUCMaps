@@ -208,6 +208,10 @@ int main()
               "Classroom", "Classroom","Classroom","Classroom","Classroom","Classroom","Classroom","Classroom","Classroom","Classroom","Classroom",
               "Office", "Office", "Office", "Office", "Office", "Lab", "Lab", "Lab", "Lab", "Lab"};
 
+    g.insertInNode("Hatem",classGround, typeJamG);
+    g.insertInNode("HatemFirstFloor",classFirst,typeJamF);
+    g.insertInNode("HatemSecondFloor",classSecond,typeJamS);
+
 
     vector<string> AdminGround = classGround;
     vector<string> AdminFF = classFirst;
@@ -281,6 +285,28 @@ int main()
     g.insertInNode("AdministrationGarden",AdminG,AdminType);
     g.insertInNode("AdministrationFirstFloor",AdminFF,AdminType);
     g.insertInNode("AdministrationSecondFloor",AdminSF,AdminType);
+
+
+//in Jameel
+//Groud CP 1-30
+//FF prefix is 10 from 101 to 1015 & P0 from 15 to 30
+//SS prefix is 20 from 1 to 30
+
+//in SSE
+//Groud CP 1-30
+//FF prefix is 10 from 101 to 1015 & P0 from 15 to 30 and Physics Lab 1-5
+//SS prefix is 20 from 1 to 30 and Computer Lab 1-5
+
+//in ADMIN
+//Garden G1-G30
+//Groud CP 1-30
+//FF prefix is 10 from 101 to 1015 & P0 from 15 to 30
+//SS prefix is 20 from 1 to 30
+
+//in Hatem
+//Groud CP 1-30
+//FF prefix is 10 from 101 to 1015 & P0 from 15 to 30
+//SS prefix is 20 from 1 to 30
 
 
 
