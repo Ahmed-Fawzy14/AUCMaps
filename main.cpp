@@ -208,6 +208,10 @@ int main()
               "Classroom", "Classroom","Classroom","Classroom","Classroom","Classroom","Classroom","Classroom","Classroom","Classroom","Classroom",
               "Office", "Office", "Office", "Office", "Office", "Lab", "Lab", "Lab", "Lab", "Lab"};
 
+    g.insertInNode("Hatem",classGround, typeJamG);
+    g.insertInNode("HatemFirstFloor",classFirst,typeJamF);
+    g.insertInNode("HatemSecondFloor",classSecond,typeJamS);
+
 
     vector<string> AdminGround = classGround;
     vector<string> AdminFF = classFirst;
@@ -283,6 +287,28 @@ int main()
     g.insertInNode("AdministrationSecondFloor",AdminSF,AdminType);
 
 
+//in Jameel
+//Groud CP 1-30
+//FF prefix is 10 from 101 to 1015 & P0 from 15 to 30
+//SS prefix is 20 from 1 to 30
+
+//in SSE
+//Groud CP 1-30
+//FF prefix is 10 from 101 to 1015 & P0 from 15 to 30 and Physics Lab 1-5
+//SS prefix is 20 from 1 to 30 and Computer Lab 1-5
+
+//in ADMIN
+//Garden G1-G30
+//Groud CP 1-30
+//FF prefix is 10 from 101 to 1015 & P0 from 15 to 30
+//SS prefix is 20 from 1 to 30
+
+//in Hatem
+//Groud CP 1-30
+//FF prefix is 10 from 101 to 1015 & P0 from 15 to 30
+//SS prefix is 20 from 1 to 30
+
+
 
 
 
@@ -293,11 +319,13 @@ int main()
          << endl;
     cout << "Service 2: Recieve the shortest path from one buidling to another "
          << endl;
+    cout << "Service 3: Input the class and its building that you would like to visit and we will provide you with the shortest path "
+         << endl;
     cin >> choice;
 
     if (choice == 1)
     {
-
+        string e;
         string n;
         string r;
         bool b;
@@ -305,8 +333,8 @@ int main()
         cin>>n;
         cout<<"Please enter the room name"<<endl;
         cin>>r;
-       g.searchClassroomInNode(n,r);
-       cout<<endl;
+        g.searchClassroomInNode(n,r,e);
+        cout<<endl;
 
         cout << "Done! Thank you!" << endl;
     }
@@ -332,6 +360,39 @@ int main()
 
         cout << "Done! Thank you!" << endl;
     }
+
+    else if (choice == 3) {
+        string one;
+        string two;
+        string three;
+        string endNode;
+        vector<string> path;
+        cout<<"Please enter the building you are at"<<endl;
+        cin>>one;
+        cout<<"Please enter building you want to go to"<<endl;
+        cin>>two;
+        cout<<"Please enter the class you are looking for in that building"<<endl;
+        cin>>three;
+       if( g.searchClassroomInNode(two,three,endNode))
+       {
+
+           int d = g.dijkstra(g.intNodeIndex(one), path, endNode);
+           cout << "Below we will provide you with the shortest path to your destination" << endl;
+           for (int i = 0; i < path.size(); i++) {
+               if (i != path.size() - 1)
+                   cout << path[i] << " ->" << " ";
+               else
+                   cout << path[i];
+           }
+
+           cout << endl << "The total desitance is " << d << endl;
+       }
+       else
+           cout<<"Room was not found in building"<<endl;
+
+        cout << "Done! Thank you!" << endl;
+    }
+
 
 
 

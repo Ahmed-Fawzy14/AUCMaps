@@ -91,7 +91,7 @@ public:
     void getPath(int startNode, int endNode, const vector<int>& pred, vector<string>& p);
 
     void insertInNode(string nodeName, vector<string> s, vector<string> t) const ;
-    bool searchClassroomInNode(string nodeName, const std::string& classroom) const;
+    bool searchClassroomInNode(string nodeName, const std::string& classroom, string &floor) const;
     int dijkstra(int startNode, vector<string>& p, string endNode);
 
     string createSub(int &index, string &theFile, Buildings ind);

@@ -374,7 +374,7 @@ void Graph::insertInNode(string f, vector<string> s, vector<string> t) const {
         return;
     }
 }
-bool Graph::searchClassroomInNode(string nodeName, const std::string& classroom) const {
+bool Graph::searchClassroomInNode(string nodeName, const std::string& classroom, string &floor) const {
 
     int x = intNodeIndex(nodeName);
     trieNode *p = NULL;
@@ -382,15 +382,17 @@ bool Graph::searchClassroomInNode(string nodeName, const std::string& classroom)
     if (x != -1) {
         bool classroomFound = adjList[x][0].trie.search(classroom, p);
         if (classroomFound) {
-            cout << "Classroom '" << classroom << " found in building " << nodeName << " and it is a " << p->type
+            cout << "Classroom '" << classroom << " found in building " << nodeName + "Ground floor" << " and it is a " << p->type
                  << endl;
+            floor=nodeName;
             return true;
         } else {
             x = intNodeIndex(nodeName + "FirstFloor");
             classroomFound = adjList[x][0].trie.search(classroom, p);
             if (classroomFound) {
                 string m = "";
-                m = nodeName + "FirstFloor";
+                m = nodeName + " First Floor";
+                floor=nodeName + "FirstFloor";
                 cout << "Classroom '" << classroom << " found in building " << m << " and it is a " << p->type << endl;
                 return true;
             } else {
@@ -398,7 +400,8 @@ bool Graph::searchClassroomInNode(string nodeName, const std::string& classroom)
                 classroomFound = adjList[x][0].trie.search(classroom, p);
                 if (classroomFound) {
                     string k = "";
-                    k = nodeName + "SecondFloor";
+                    k = nodeName + " Second Floor";
+                    floor=nodeName +"SecondFloor";
                     cout << "Classroom '" << classroom << " found in building " << k << " and it is a " << p->type
                          << endl;
                     return true;
@@ -408,7 +411,8 @@ bool Graph::searchClassroomInNode(string nodeName, const std::string& classroom)
                         classroomFound = adjList[x][0].trie.search(classroom, p);
                         if (classroomFound) {
                             string n = "";
-                            n = nodeName + "ThirdFloor";
+                            n = nodeName + " Third Floor";
+                            floor=nodeName +"ThirdFloor";
                             cout << "Classroom '" << classroom << " found in building " << n << " and it is a " << p->type
                                  << endl;
                             return true;
@@ -423,7 +427,8 @@ bool Graph::searchClassroomInNode(string nodeName, const std::string& classroom)
                         classroomFound = adjList[x][0].trie.search(classroom, p);
                         if (classroomFound) {
                             string n = "";
-                            n = nodeName + "Garden";
+                            n = nodeName + " Garden";
+                            floor=nodeName +"Garden";
                             cout << "Classroom '" << classroom << " found in building " << n << " and it is a "
                                  << p->type << endl;
                             return true;
